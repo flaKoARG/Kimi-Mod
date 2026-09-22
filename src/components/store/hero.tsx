@@ -13,27 +13,22 @@ export function Hero({ onTab }: HeroProps) {
     <section className="relative overflow-hidden bg-zinc-950 text-white">
       {/* Glow decorativo de fondo */}
       <div className="absolute inset-0">
-        <div className="absolute left-1/2 top-1/3 h-[400px] w-[400px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/20 blur-[120px]" />
-        <div className="absolute bottom-0 left-0 h-[300px] w-[300px] rounded-full bg-sale/10 blur-[100px]" />
+        <div className="absolute left-1/2 top-1/2 h-[420px] w-[680px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/15 blur-[130px]" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[560px] max-w-7xl flex-col items-center justify-center px-4 py-20 text-center sm:px-6 lg:min-h-[640px] lg:px-8">
-        {/* Logo central */}
+      <div className="relative mx-auto flex min-h-[560px] max-w-7xl flex-col items-center justify-center px-4 py-16 text-center sm:px-6 lg:min-h-[640px] lg:px-8">
+        {/* Banner del logo */}
         <div className="animate-in fade-in zoom-in-95 duration-700">
           <img
-            src="/images/logo/Rojo.png"
+            src="/images/logo/bannerkimi.jpeg"
             alt="Kimi Mod — Tu esencia. Tu estilo."
-            className="mx-auto h-40 w-auto rounded-2xl object-contain shadow-2xl shadow-primary/20 sm:h-52 lg:h-60"
+            className="mx-auto h-auto w-full max-w-3xl rounded-2xl object-contain shadow-2xl shadow-primary/20"
           />
         </div>
 
         <span className="mt-8 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-wide backdrop-blur">
           Nueva colección · Otoño/Invierno
         </span>
-
-        <h1 className="mt-4 text-3xl font-black leading-[1.05] tracking-tight sm:text-4xl lg:text-5xl">
-          Tu esencia. Tu estilo.
-        </h1>
 
         <p className="mt-4 max-w-md text-sm text-zinc-200 sm:text-base">
           Pantalones, remeras, camperas y polleras. Diseño propio para mujer y
