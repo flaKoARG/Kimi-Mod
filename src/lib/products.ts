@@ -124,32 +124,34 @@ export const PRODUCTS: Product[] = [
     description: "Chino de sarga peinada, pinza delantera y corte recto moderno.",
   },
   {
-    id: "h-campera-jean",
-    name: "Campera de Jean Índigo",
+    id: "h-campera-brave",
+    name: "Campera Clusterman Brave",
     gender: "hombre",
     category: "camperas",
-    price: 49990,
-    image: "/images/products/h-campera-jean.png",
-    colors: [
-      { name: "Índigo", hex: "#1e3a8a" },
-    ],
-    sizes: SIZES_UPPER,
-    isNew: true,
-    description: "Campera trucker de denim pesado con bolsillos plaqué y botones metálicos.",
-  },
-  {
-    id: "h-campera-negra",
-    name: "Campera Bomber Negra",
-    gender: "hombre",
-    category: "camperas",
-    price: 39990,
-    originalPrice: 54990,
-    image: "/images/products/h-campera-negra.png",
+    price: 54990,
+    originalPrice: 69990,
+    image: "/images/products/h-campera-brave.jpg",
     colors: [
       { name: "Negro", hex: "#111111" },
     ],
     sizes: SIZES_UPPER,
-    description: "Bomber con interior térmico, puños acanalados y cierre frontal.",
+    isNew: true,
+    description:
+      "Campera bomber de nylon acolchado en negro, con estampado gráfico blanco y piping contrastante. Cierre frontal, puños acanalados y bolsillos laterales.",
+  },
+  {
+    id: "h-campera-opposite",
+    name: "Campera Opposite",
+    gender: "hombre",
+    category: "camperas",
+    price: 42990,
+    image: "/images/products/h-campera-opposite.jpg",
+    colors: [
+      { name: "Verde Bosque", hex: "#2f4f3a" },
+    ],
+    sizes: SIZES_UPPER,
+    description:
+      "Campera de frizado (french terry) verde bosque con paneles color-block crema en espalda. Cuello alto, media cremallera y puños acanalados, fit relajado.",
   },
   // ---------------- MUJER ----------------
   {

@@ -21,3 +21,23 @@ Stage Summary:
 - Catálogos Hombre, Mujer, Categorías y Sale operativos con filtros, búsqueda, carrito y quick view.
 - 17 imágenes de productos generadas; cuando el usuario provea fotos reales + precios, basta editar `src/lib/products.ts` (campos `image`, `price`, `originalPrice`) y agregar archivos en `public/images/products/`.
 - Stack: Next.js 16, TypeScript, Tailwind 4, shadcn/ui, Zustand. Sin backend necesario para el catálogo actual (datos en memoria).
+
+---
+Task ID: 2
+Agent: Z.ai Code (main)
+Task: Agregar 2 camperas de hombre reales (fotos del usuario) a la tienda: "Clusterman Brave" y "Opposite".
+
+Work Log:
+- Analizadas las fotos con VLM skill para obtener descripciones precisas: Clusterman Brave = bomber negra de nylon acolchado con estampado blanco y piping; Opposite = campera/buzo verde bosque de french terry con paneles color-block crema.
+- Copiadas las imágenes a `public/images/products/h-campera-brave.jpg` y `h-campera-opposite.jpg` (nombres limpios, sin espacios).
+- Editado `src/lib/products.ts`: reemplazados los 2 placeholders de camperas de hombre (h-campera-jean, h-campera-negra) por los 2 productos reales:
+  - h-campera-brave: "Campera Clusterman Brave", $54.990 (original $69.990, -21%), color Negro, isNew, descripción detallada.
+  - h-campera-opposite: "Campera Opposite", $42.990, color Verde Bosque, descripción detallada.
+- Eliminadas las imágenes placeholder antiguas h-campera-jean.png y h-campera-negra.png.
+- Lint: `bun run lint` limpio (0 errores).
+- Verificación con Agent Browser: ambas camperas aparecen en tab Hombre y en Categorías > Camperas (junto a la Campera Lino de mujer = 3 total). Imágenes cargan OK (naturalWidth 1144-1145, complete:true, sin 404 en dev.log). Quick View de Clusterman Brave funciona con selector de color Negro y botón agregar al carrito. Sin errores de consola.
+
+Stage Summary:
+- 2 camperas de hombre reales integradas con sus nombres, fotos y descripciones precisas (obtenidas vía VLM).
+- Precios en ARS: Clusterman Brave $54.990 (en oferta), Opposite $42.990.
+- Estructura lista para seguir sumando productos reales editando `src/lib/products.ts`.
