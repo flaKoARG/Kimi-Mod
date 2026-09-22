@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ShoppingBag, Minus, Plus, Check, ChevronLeft, ChevronRight } from "lucide-react";
+import { ShoppingBag, Minus, Plus, Check, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -18,6 +18,7 @@ import {
   type Product,
 } from "@/lib/products";
 import { useCart } from "@/lib/cart";
+import { ImageLightbox } from "./image-lightbox";
 
 interface QuickViewProps {
   product: Product | null;
@@ -55,6 +56,7 @@ function QuickViewBody({
 
   const images = getProductImages(product);
   const [active, setActive] = useState(0);
+  const [lightboxOpen, setLightboxOpen] = useState(false);
   const discount = discountPercent(product.price, product.originalPrice);
 
   const prev = () => setActive((i) => (i - 1 + images.length) % images.length);
@@ -64,15 +66,31 @@ function QuickViewBody({
     <div className="grid h-auto grid-cols-1 overflow-y-auto md:h-[85vh] md:grid-cols-2 md:overflow-hidden">
       {/* === Galería de imágenes === */}
       <div className="flex flex-col gap-3 bg-muted p-4 md:h-full md:overflow-y-auto md:p-5 scrollbar-thin">
-        <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-background md:aspect-[4/5]">
+        <div className="group relative aspect-square w-full overflow-hidden rounded-xl bg-background md:aspect-[4/5]">
+          <button
+            type="button"
+            onClick={() => setLightboxOpen(true)}
+            aria-label="Ampliar imagen"
+            className="absolute inset-0 z-10 h-full w-full cursor-zoom-in"
+          />
           <img
             src={images[active]}
             alt={`${product.name} - foto ${active + 1}`}
-            className="h-full w-full object-cover"
+            className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
           />
 
+          {/* Botón de zoom (esquina inferior derecha) */}
+          <button
+            type="button"
+            onClick={() => setLightboxOpen(true)}
+            aria-label="Ver imagen ampliada"
+            className="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 rounded-full bg-zinc-950/70 px-3 py-1.5 text-xs font-medium text-white opacity-90 backdrop-blur transition-opacity hover:opacity-100"
+          >
+            <ZoomIn className="h-4 w-4" /> Ampliar
+          </button>
+
           {/* Badges */}
-          <div className="absolute left-3 top-3 flex flex-col gap-1.5">
+          <div className="pointer-events-none absolute left-3 top-3 flex flex-col gap-1.5">
             {product.isNew && (
               <Badge className="bg-primary text-sm font-semibold text-primary-foreground">
                 Nuevo
@@ -91,14 +109,14 @@ function QuickViewBody({
               <button
                 onClick={prev}
                 aria-label="Imagen anterior"
-                className="absolute left-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-zinc-900 shadow transition-colors hover:bg-white"
+                className="absolute left-2 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-zinc-900 shadow transition-colors hover:bg-white"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
               <button
                 onClick={next}
                 aria-label="Imagen siguiente"
-                className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-zinc-900 shadow transition-colors hover:bg-white"
+                className="absolute right-2 top-1/2 z-20 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-zinc-900 shadow transition-colors hover:bg-white"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>
@@ -107,7 +125,7 @@ function QuickViewBody({
 
           {/* Contador de imágenes */}
           {images.length > 1 && (
-            <span className="absolute bottom-2 right-2 rounded-full bg-zinc-950/70 px-2.5 py-1 text-xs font-medium text-white backdrop-blur">
+            <span className="pointer-events-none absolute bottom-3 left-3 z-10 rounded-full bg-zinc-950/70 px-2.5 py-1 text-xs font-medium text-white backdrop-blur">
               {active + 1} / {images.length}
             </span>
           )}
@@ -259,6 +277,17 @@ function QuickViewBody({
           </Button>
         </div>
       </div>
+
+      {/* Lightbox de pantalla completa */}
+      <ImageLightbox
+        key={lightboxOpen ? `open-${active}` : "closed"}
+        images={images}
+        startIndex={active}
+        open={lightboxOpen}
+        onClose={() => setLightboxOpen(false)}
+        onIndexChange={setActive}
+        alt={product.name}
+      />
     </div>
   );
 }
