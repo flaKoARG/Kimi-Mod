@@ -219,20 +219,6 @@ export const PRODUCTS: Product[] = [
       "Jean wide leg de lavado celeste con tiro alto y pierna ancha. Cinco bolsillos, pliegues marcados y look relajado oversized.",
   },
   {
-    id: "h-chino-negro",
-    name: "Pantalón Chino Negro",
-    gender: "hombre",
-    category: "pantalones",
-    price: 32990,
-    image: "/images/products/h-chino-negro.png",
-    colors: [
-      { name: "Negro", hex: "#111111" },
-      { name: "Azul", hex: "#1e3a8a" },
-    ],
-    sizes: SIZES_WAIST,
-    description: "Chino de sarga peinada, pinza delantera y corte recto moderno.",
-  },
-  {
     id: "h-campera-brave",
     name: "Campera Clusterman Brave",
     gender: "hombre",
