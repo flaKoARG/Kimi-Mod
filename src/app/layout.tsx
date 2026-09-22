@@ -19,7 +19,9 @@ export const metadata: Metadata = {
   keywords: ["Kimi Mod", "ropa", "moda", "indumentaria", "remeras", "pantalones", "camperas", "polleras", "hombre", "mujer"],
   authors: [{ name: "Kimi Mod" }],
   icons: {
-    icon: "https://z-cdn.chatglm.cn/z-ai/static/logo.svg",
+    icon: "/images/logo/logo.svg",
+    shortcut: "/images/logo/logo.svg",
+    apple: "/images/logo/logo.svg",
   },
   openGraph: {
     title: "Kimi Mod — Tienda de Indumentaria",
