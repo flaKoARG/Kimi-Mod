@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { ShoppingBag, Minus, Plus, Check } from "lucide-react";
+import { ShoppingBag, Minus, Plus, Check, ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Dialog,
@@ -11,7 +11,12 @@ import {
 } from "@/components/ui/dialog";
 import { Badge } from "@/components/ui/badge";
 import { cn } from "@/lib/utils";
-import { formatPrice, discountPercent, type Product } from "@/lib/products";
+import {
+  formatPrice,
+  discountPercent,
+  getProductImages,
+  type Product,
+} from "@/lib/products";
 import { useCart } from "@/lib/cart";
 
 interface QuickViewProps {
@@ -23,7 +28,7 @@ interface QuickViewProps {
 export function ProductQuickView({ product, open, onOpenChange }: QuickViewProps) {
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="max-w-3xl overflow-hidden p-0 sm:rounded-xl">
+      <DialogContent className="max-w-5xl overflow-hidden p-0 sm:rounded-xl">
         <DialogTitle className="sr-only">{product?.name ?? "Producto"}</DialogTitle>
         <DialogDescription className="sr-only">
           {product?.description ?? "Detalle del producto"}
@@ -47,47 +52,118 @@ function QuickViewBody({
   const [size, setSize] = useState<string>(product.sizes[0] ?? "");
   const [color, setColor] = useState<string>(product.colors[0]?.name ?? "");
   const [qty, setQty] = useState(1);
+
+  const images = getProductImages(product);
+  const [active, setActive] = useState(0);
   const discount = discountPercent(product.price, product.originalPrice);
 
+  const prev = () => setActive((i) => (i - 1 + images.length) % images.length);
+  const next = () => setActive((i) => (i + 1) % images.length);
+
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2">
-      <div className="relative aspect-[3/4] bg-muted md:aspect-auto">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="h-full w-full object-cover"
-        />
-        <div className="absolute left-3 top-3 flex flex-col gap-1">
-          {product.isNew && (
-            <Badge className="bg-primary text-primary-foreground">Nuevo</Badge>
+    <div className="grid h-auto grid-cols-1 overflow-y-auto md:h-[85vh] md:grid-cols-2 md:overflow-hidden">
+      {/* === Galería de imágenes === */}
+      <div className="flex flex-col gap-3 bg-muted p-4 md:h-full md:overflow-y-auto md:p-5 scrollbar-thin">
+        <div className="relative aspect-square w-full overflow-hidden rounded-xl bg-background md:aspect-[4/5]">
+          <img
+            src={images[active]}
+            alt={`${product.name} - foto ${active + 1}`}
+            className="h-full w-full object-cover"
+          />
+
+          {/* Badges */}
+          <div className="absolute left-3 top-3 flex flex-col gap-1.5">
+            {product.isNew && (
+              <Badge className="bg-primary text-sm font-semibold text-primary-foreground">
+                Nuevo
+              </Badge>
+            )}
+            {discount && (
+              <Badge className="bg-sale text-sm font-semibold text-sale-foreground">
+                -{discount}%
+              </Badge>
+            )}
+          </div>
+
+          {/* Flechas (solo si hay más de una imagen) */}
+          {images.length > 1 && (
+            <>
+              <button
+                onClick={prev}
+                aria-label="Imagen anterior"
+                className="absolute left-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-zinc-900 shadow transition-colors hover:bg-white"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <button
+                onClick={next}
+                aria-label="Imagen siguiente"
+                className="absolute right-2 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-zinc-900 shadow transition-colors hover:bg-white"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            </>
           )}
-          {discount && (
-            <Badge className="bg-sale text-sale-foreground">-{discount}%</Badge>
+
+          {/* Contador de imágenes */}
+          {images.length > 1 && (
+            <span className="absolute bottom-2 right-2 rounded-full bg-zinc-950/70 px-2.5 py-1 text-xs font-medium text-white backdrop-blur">
+              {active + 1} / {images.length}
+            </span>
           )}
         </div>
+
+        {/* Thumbnails */}
+        {images.length > 1 && (
+          <div className="flex gap-2 overflow-x-auto pb-1 scrollbar-thin">
+            {images.map((img, i) => (
+              <button
+                key={img + i}
+                onClick={() => setActive(i)}
+                aria-label={`Ver foto ${i + 1}`}
+                className={cn(
+                  "relative h-16 w-16 flex-none overflow-hidden rounded-lg border-2 bg-background transition-all",
+                  active === i
+                    ? "border-primary ring-2 ring-primary/30"
+                    : "border-transparent opacity-70 hover:opacity-100"
+                )}
+              >
+                <img
+                  src={img}
+                  alt={`Miniatura ${i + 1}`}
+                  className="h-full w-full object-cover"
+                />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
-      <div className="flex flex-col gap-4 p-6">
+      {/* === Detalle del producto === */}
+      <div className="flex h-auto flex-col gap-4 overflow-visible p-6 scrollbar-thin md:h-full md:overflow-y-auto md:p-7">
         <div>
-          <p className="text-xs font-medium uppercase tracking-wide text-primary">
+          <p className="text-xs font-semibold uppercase tracking-wider text-primary">
             {product.gender === "hombre" ? "Hombre" : "Mujer"} · {product.category}
           </p>
-          <h2 className="mt-1 text-xl font-bold text-foreground sm:text-2xl">
+          <h2 className="mt-1.5 text-2xl font-black leading-tight tracking-tight text-foreground sm:text-3xl">
             {product.name}
           </h2>
         </div>
 
-        <div className="flex items-baseline gap-2">
-          <span className="text-2xl font-bold text-foreground">
+        {/* Precio */}
+        <div className="flex flex-wrap items-baseline gap-2.5">
+          <span className="text-3xl font-black text-foreground">
             {formatPrice(product.price)}
           </span>
           {product.originalPrice && (
-            <span className="text-sm text-muted-foreground line-through">
+            <span className="text-lg text-muted-foreground line-through">
               {formatPrice(product.originalPrice)}
             </span>
           )}
           {discount && (
-            <Badge className="bg-sale text-sale-foreground">Ahorro {discount}%</Badge>
+            <Badge className="bg-sale px-2.5 py-1 text-sm font-bold text-sale-foreground">
+              Ahorro {discount}%
+            </Badge>
           )}
         </div>
 
@@ -96,19 +172,19 @@ function QuickViewBody({
         </p>
 
         {/* Colors */}
-        <div className="space-y-1.5">
-          <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
+        <div className="space-y-2">
+          <p className="text-sm font-semibold uppercase tracking-wide text-foreground">
             Color:{" "}
             <span className="font-normal normal-case text-muted-foreground">{color}</span>
           </p>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2.5">
             {product.colors.map((c) => (
               <button
                 key={c.name}
                 title={c.name}
                 onClick={() => setColor(c.name)}
                 className={cn(
-                  "relative h-7 w-7 rounded-full border transition-transform",
+                  "relative h-8 w-8 rounded-full border-2 transition-transform",
                   color === c.name
                     ? "border-primary ring-2 ring-primary/30"
                     : "border-zinc-300 hover:scale-110"
@@ -117,7 +193,7 @@ function QuickViewBody({
                 aria-label={c.name}
               >
                 {color === c.name && (
-                  <Check className="absolute inset-0 m-auto h-3.5 w-3.5 text-white mix-blend-difference" />
+                  <Check className="absolute inset-0 m-auto h-4 w-4 text-white mix-blend-difference" />
                 )}
               </button>
             ))}
@@ -125,8 +201,8 @@ function QuickViewBody({
         </div>
 
         {/* Sizes */}
-        <div className="space-y-1.5">
-          <p className="text-xs font-semibold uppercase tracking-wide text-foreground">
+        <div className="space-y-2">
+          <p className="text-sm font-semibold uppercase tracking-wide text-foreground">
             Talle:{" "}
             <span className="font-normal normal-case text-muted-foreground">{size}</span>
           </p>
@@ -136,7 +212,7 @@ function QuickViewBody({
                 key={s}
                 onClick={() => setSize(s)}
                 className={cn(
-                  "min-w-10 rounded-md border px-3 py-1.5 text-sm font-medium transition-colors",
+                  "min-w-11 rounded-lg border-2 px-4 py-2 text-sm font-semibold transition-colors",
                   size === s
                     ? "border-zinc-950 bg-zinc-950 text-white"
                     : "border-border bg-background text-foreground hover:border-zinc-400"
@@ -148,23 +224,23 @@ function QuickViewBody({
           </div>
         </div>
 
-        {/* Qty + Add */}
-        <div className="mt-auto flex items-center gap-3 pt-2">
-          <div className="flex items-center rounded-md border border-border">
+        {/* Qty + Add (sticky al fondo del panel en desktop) */}
+        <div className="mt-auto flex items-center gap-3 pt-3">
+          <div className="flex items-center rounded-lg border border-border">
             <Button
               variant="ghost"
               size="icon"
-              className="h-9 w-9 rounded-none"
+              className="h-11 w-11 rounded-none"
               onClick={() => setQty((q) => Math.max(1, q - 1))}
               aria-label="Restar"
             >
               <Minus className="h-4 w-4" />
             </Button>
-            <span className="w-8 text-center text-sm font-semibold">{qty}</span>
+            <span className="w-10 text-center text-base font-bold">{qty}</span>
             <Button
               variant="ghost"
               size="icon"
-              className="h-9 w-9 rounded-none"
+              className="h-11 w-11 rounded-none"
               onClick={() => setQty((q) => q + 1)}
               aria-label="Sumar"
             >
@@ -172,13 +248,14 @@ function QuickViewBody({
             </Button>
           </div>
           <Button
-            className="flex-1 gap-2 bg-zinc-950 text-white hover:bg-zinc-800"
+            size="lg"
+            className="flex-1 gap-2 bg-zinc-950 text-base text-white hover:bg-zinc-800"
             onClick={() => {
               add(product, size, color, qty);
               onOpenChange(false);
             }}
           >
-            <ShoppingBag className="h-4 w-4" /> Agregar al carrito
+            <ShoppingBag className="h-5 w-5" /> Agregar al carrito
           </Button>
         </div>
       </div>

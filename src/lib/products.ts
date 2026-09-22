@@ -11,10 +11,20 @@ export interface Product {
   /** Precio original tachado cuando el producto está en oferta. */
   originalPrice?: number;
   image: string;
+  /** Galería de imágenes adicionales para la vista rápida. Si se omite, se usa solo `image`. */
+  gallery?: string[];
   colors: { name: string; hex: string }[];
   sizes: string[];
   isNew?: boolean;
   description: string;
+}
+
+/** Devuelve todas las imágenes de un producto (imagen principal + galería). */
+export function getProductImages(p: Product): string[] {
+  if (p.gallery && p.gallery.length > 0) {
+    return [p.image, ...p.gallery.filter((g) => g !== p.image)];
+  }
+  return [p.image];
 }
 
 export interface CategoryInfo {
@@ -131,6 +141,11 @@ export const PRODUCTS: Product[] = [
     price: 54990,
     originalPrice: 69990,
     image: "/images/products/h-campera-brave.jpg",
+    gallery: [
+      "/images/products/h-campera-brave-2.jpg",
+      "/images/products/h-campera-brave-3.jpg",
+      "/images/products/h-campera-brave-4.jpg",
+    ],
     colors: [
       { name: "Negro", hex: "#111111" },
     ],
@@ -146,12 +161,13 @@ export const PRODUCTS: Product[] = [
     category: "camperas",
     price: 42990,
     image: "/images/products/h-campera-opposite.jpg",
+    gallery: ["/images/products/h-campera-opposite-2.jpg"],
     colors: [
       { name: "Verde Bosque", hex: "#2f4f3a" },
     ],
     sizes: SIZES_UPPER,
     description:
-      "Campera de frizado (french terry) verde bosque con paneles color-block crema en espalda. Cuello alto, media cremallera y puños acanalados, fit relajado.",
+      "Campera de frizado (french terry) verde bosque con paneles color-block crema en espalda. Cuello alto, media cremillera y puños acanalados, fit relajado.",
   },
   // ---------------- MUJER ----------------
   {
