@@ -188,6 +188,25 @@ export const PRODUCTS: Product[] = [
     description:
       "Buzo hoodie de frizado de algodón en gris claro (oatmeal), con capucha sin cordones, bolsillo canguro y puños acanalados. Hombros caídos y fit oversize para un look streetwear cómodo.",
   },
+  {
+    id: "h-buzo-mixed",
+    name: "Buzo Mixed Feelings",
+    gender: "hombre",
+    category: "camperas",
+    price: 40000,
+    image: "/images/products/h-buzo-mixed.jpg",
+    gallery: [
+      "/images/products/h-buzo-mixed-2.jpg",
+      "/images/products/h-buzo-mixed-3.jpg",
+    ],
+    colors: [
+      { name: "Negro", hex: "#111111" },
+    ],
+    sizes: SIZES_UPPER,
+    isNew: true,
+    description:
+      "Buzo quarter-zip negro de frizado de algodón con estampado gráfico blanco 'Mixed Feelings London' en el pecho. Cuello alto con media cremillera, hombros caídos, puños acanalados y fit oversize unisex.",
+  },
   // ---------------- MUJER ----------------
   {
     id: "m-remera-blanca",
