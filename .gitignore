@@ -60,3 +60,6 @@ server.log
 # screenshots / verification images
 preview-*.png
 verify-*.png
+
+# uploaded source photos (already copied to public/images/products/)
+/upload/
