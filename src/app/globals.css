@@ -47,41 +47,42 @@
 
 :root {
   --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  /* Kimi Mod primary blue */
-  --primary: oklch(0.55 0.21 256);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.45 0 0);
-  --accent: oklch(0.96 0.02 250);
-  --accent-foreground: oklch(0.205 0 0);
+  /* Paleta cálida terrosa (crema/beige/naranja) inspirada en las fotos de producto */
+  --background: oklch(0.975 0.012 75);          /* crema cálido */
+  --foreground: oklch(0.22 0.01 50);             /* marrón muy oscuro casi negro */
+  --card: oklch(0.99 0.008 80);                  /* blanco crema */
+  --card-foreground: oklch(0.22 0.01 50);
+  --popover: oklch(0.99 0.008 80);
+  --popover-foreground: oklch(0.22 0.01 50);
+  /* Kimi Mod primary: rojo borgoña (como el logo) */
+  --primary: oklch(0.5 0.19 25);
+  --primary-foreground: oklch(0.985 0.005 80);
+  --secondary: oklch(0.94 0.015 70);             /* beige claro */
+  --secondary-foreground: oklch(0.25 0.01 50);
+  --muted: oklch(0.93 0.018 72);                 /* beige */
+  --muted-foreground: oklch(0.5 0.02 60);
+  --accent: oklch(0.9 0.04 60);                   /* naranja terroso suave */
+  --accent-foreground: oklch(0.25 0.02 50);
   /* Kimi Mod sale red */
-  --sale: oklch(0.58 0.235 27);
-  --sale-foreground: oklch(0.985 0 0);
+  --sale: oklch(0.55 0.22 27);
+  --sale-foreground: oklch(0.985 0.005 80);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0 0);
-  --input: oklch(0.9 0 0);
-  --ring: oklch(0.55 0.21 256);
-  --chart-1: oklch(0.55 0.21 256);
-  --chart-2: oklch(0.58 0.235 27);
-  --chart-3: oklch(0.205 0 0);
+  --border: oklch(0.88 0.02 70);                 /* borde beige */
+  --input: oklch(0.88 0.02 70);
+  --ring: oklch(0.5 0.19 25);
+  --chart-1: oklch(0.5 0.19 25);
+  --chart-2: oklch(0.55 0.22 27);
+  --chart-3: oklch(0.22 0.01 50);
   --chart-4: oklch(0.828 0.189 84.429);
   --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.55 0.21 256);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.55 0.21 256);
+  --sidebar: oklch(0.975 0.012 75);
+  --sidebar-foreground: oklch(0.22 0.01 50);
+  --sidebar-primary: oklch(0.5 0.19 25);
+  --sidebar-primary-foreground: oklch(0.985 0.005 80);
+  --sidebar-accent: oklch(0.93 0.018 72);
+  --sidebar-accent-foreground: oklch(0.25 0.01 50);
+  --sidebar-border: oklch(0.88 0.02 70);
+  --sidebar-ring: oklch(0.5 0.19 25);
 }
 
 .dark {

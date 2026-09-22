@@ -49,9 +49,14 @@ export function Header({ active, onTab, onSearch }: HeaderProps) {
             </Button>
           </SheetTrigger>
           <SheetContent side="left" className="w-72 border-white/10 bg-zinc-950 p-0 text-white">
-            <SheetTitle className="px-6 pt-6 text-lg font-black tracking-tight">
-              KIMI<span className="text-sale">·</span>MOD
-            </SheetTitle>
+            <div className="px-6 pt-6">
+              <img
+                src="/images/logo/Rojo.png"
+                alt="Kimi Mod"
+                className="h-14 w-auto rounded-lg object-contain"
+              />
+            </div>
+            <SheetTitle className="sr-only">Menú Kimi Mod</SheetTitle>
             <nav className="mt-4 flex flex-col">
               {NAV.map((n) => (
                 <button
@@ -80,12 +85,14 @@ export function Header({ active, onTab, onSearch }: HeaderProps) {
         {/* Logo */}
         <button
           onClick={() => go("inicio")}
-          className="flex select-none items-center gap-1"
+          className="flex select-none items-center"
           aria-label="Kimi Mod inicio"
         >
-          <span className="text-xl font-black tracking-tight sm:text-2xl">
-            KIMI<span className="text-sale">.</span>MOD
-          </span>
+          <img
+            src="/images/logo/Rojo.png"
+            alt="Kimi Mod"
+            className="h-11 w-auto rounded-lg object-contain sm:h-12"
+          />
         </button>
 
         {/* Desktop nav */}

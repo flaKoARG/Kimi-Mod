@@ -13,9 +13,11 @@ export function Footer({ onTab }: FooterProps) {
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
         {/* Brand */}
         <div className="col-span-2 lg:col-span-1">
-          <p className="text-xl font-black text-white">
-            KIMI<span className="text-sale">.</span>MOD
-          </p>
+          <img
+            src="/images/logo/Rojo.png"
+            alt="Kimi Mod"
+            className="h-14 w-auto rounded-lg object-contain"
+          />
           <p className="mt-3 max-w-xs text-sm text-zinc-400">
             Indumentaria urbana para mujer y hombre. Diseño propio, tela premium
             y precios accesibles.

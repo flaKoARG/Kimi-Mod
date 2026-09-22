@@ -162,19 +162,61 @@ export const PRODUCTS: Product[] = [
       "Remera oversize blanca de algodón con gráficos minimalistas en pecho: 'NOT TOMORROW NOT DAY' en negro y 'THE ART OF Doing Nothing' en verde. Etiqueta de marca SOVIET en espalda. Fit relajado streetwear.",
   },
   {
-    id: "h-jean-azul",
-    name: "Jean Slim Azul",
+    id: "h-jean-1",
+    name: "Jean Straight Celeste",
     gender: "hombre",
     category: "pantalones",
-    price: 27990,
-    originalPrice: 34990,
-    image: "/images/products/h-jean-azul.png",
+    price: 34990,
+    image: "/images/products/PantalonJean1.jpeg",
+    gallery: [
+      "/images/products/PantalonJean1-2.jpeg",
+      "/images/products/PantalonJean1-3.jpeg",
+    ],
     colors: [
-      { name: "Azul", hex: "#1e3a8a" },
-      { name: "Negro", hex: "#111111" },
+      { name: "Celeste", hex: "#9bb5d6" },
     ],
     sizes: SIZES_WAIST,
-    description: "Jean slim de denim 12oz con elastano, tiro medio y lavado stone.",
+    isNew: true,
+    description:
+      "Jean de lavado celeste claro con corte straight relajado y tiro medio. Cinco bolsillos, parche de cuero en espalda y denim suave al tacto.",
+  },
+  {
+    id: "h-jean-2",
+    name: "Jean Baggy Azul Medio",
+    gender: "hombre",
+    category: "pantalones",
+    price: 36990,
+    image: "/images/products/PantalonJean2.jpeg",
+    gallery: [
+      "/images/products/PantalonJean2-2.jpeg",
+      "/images/products/PantalonJean2-3.jpeg",
+    ],
+    colors: [
+      { name: "Azul Medio", hex: "#4a6fa5" },
+    ],
+    sizes: SIZES_WAIST,
+    isNew: true,
+    description:
+      "Jean baggy de lavado azul medio con corte recto holgado y largo ligeramente corto. Cinco bolsillos con costuras visibles y lavado desgastado sutil.",
+  },
+  {
+    id: "h-jean-3",
+    name: "Jean Wide Leg Celeste",
+    gender: "hombre",
+    category: "pantalones",
+    price: 35990,
+    originalPrice: 42990,
+    image: "/images/products/PantalonJean3.jpeg",
+    gallery: [
+      "/images/products/PantalonJean3-2.jpeg",
+      "/images/products/PantalonJean3-3.jpeg",
+    ],
+    colors: [
+      { name: "Celeste", hex: "#9bb5d6" },
+    ],
+    sizes: SIZES_WAIST,
+    description:
+      "Jean wide leg de lavado celeste con tiro alto y pierna ancha. Cinco bolsillos, pliegues marcados y look relajado oversized.",
   },
   {
     id: "h-chino-negro",
@@ -295,18 +337,63 @@ export const PRODUCTS: Product[] = [
     description: "Remera manga corta en rojo intenso, cuello redondo y corte entallado.",
   },
   {
-    id: "m-jean",
-    name: "Jean Mom Azul",
+    id: "m-jean-4",
+    name: "Jean Wide Leg Vintage",
+    gender: "mujer",
+    category: "pantalones",
+    price: 33990,
+    image: "/images/products/PantalonJean4.jpeg",
+    gallery: [
+      "/images/products/PantalonJean4-2.jpeg",
+      "/images/products/PantalonJean4-3.jpeg",
+    ],
+    colors: [
+      { name: "Celeste Vintage", hex: "#a8b8d0" },
+    ],
+    sizes: SIZES_WAIST,
+    isNew: true,
+    description:
+      "Jean wide leg de lavado celeste vintage con tiro alto y corte holgado. Cinco bolsillos clásicos, look retro y caída cómoda.",
+  },
+  {
+    id: "m-jean-5",
+    name: "Jean Roto Negro con Cadena",
+    gender: "mujer",
+    category: "pantalones",
+    price: 37990,
+    image: "/images/products/PantalonJean5.jpeg",
+    gallery: [
+      "/images/products/PantalonJean5-2.jpeg",
+      "/images/products/PantalonJean5-3.jpeg",
+      "/images/products/PantalonJean5-4.jpeg",
+      "/images/products/PantalonJean5-5.jpeg",
+    ],
+    colors: [
+      { name: "Negro", hex: "#1a1a1a" },
+    ],
+    sizes: SIZES_WAIST,
+    isNew: true,
+    description:
+      "Jean negro de corte relajado con roturas en las rodillas y cadena decorativa en el bolsillo lateral. Estilo urbano con detalle de hardware.",
+  },
+  {
+    id: "m-jean-6",
+    name: "Jean Wide Leg Índigo",
     gender: "mujer",
     category: "pantalones",
     price: 32990,
-    image: "/images/products/m-jean.png",
+    originalPrice: 39990,
+    image: "/images/products/PantalonJean6.jpeg",
+    gallery: [
+      "/images/products/PantalonJean6-2.jpeg",
+      "/images/products/PantalonJean6-3.jpeg",
+    ],
     colors: [
-      { name: "Azul", hex: "#1e3a8a" },
-      { name: "Negro", hex: "#111111" },
+      { name: "Índigo", hex: "#1e3a5f" },
     ],
     sizes: SIZES_WAIST,
-    description: "Jean mom fit de tiro alto, denim con elastano para mayor comodidad.",
+    description:
+      "Jean wide leg de lavado índigo oscuro con corte de pierna ancha y cinco bolsillos. Acabado limpio sin desgastes, ideal para combinar con todo.",
   },
   {
     id: "m-pollera-negra",
