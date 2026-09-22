@@ -106,48 +106,60 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "h-remera-1",
-    name: "Remera Oversize Blanca",
+    name: "Remera Raggjante Sportsunion",
     gender: "hombre",
     category: "remeras",
     price: 18990,
-    image: "/images/products/remera-hombre-1.jpg",
+    image: "/images/products/remera-hombre-1-1.jpeg",
+    gallery: [
+      "/images/products/remera-hombre-1-2.jpeg",
+      "/images/products/remera-hombre-1-3.jpeg",
+    ],
     colors: [
-      { name: "Blanco", hex: "#f5f5f5" },
+      { name: "Azul", hex: "#1e3a8a" },
     ],
     sizes: SIZES_UPPER,
     isNew: true,
     description:
-      "Remera oversize de algodón pesado en blanco, cuello redondo reforzado y hombros caídos. Look streetwear cómodo y versátil.",
+      "Remera retro deportiva en azul con detalles en crema: cuello tipo polo, puños y piping laterales. Estampado gráfico en pecho con tipografía cursiva y emblemas vintage. Fit relajado y tela suave transpirable.",
   },
   {
     id: "h-remera-2",
-    name: "Remera Gráfica Negra",
+    name: "Remera Gráfica Waffle",
     gender: "hombre",
     category: "remeras",
     price: 21990,
-    image: "/images/products/remera-hombre-2.jpg",
+    image: "/images/products/remera-hombre-2-1.jpeg",
+    gallery: [
+      "/images/products/remera-hombre-2-2.jpeg",
+      "/images/products/remera-hombre-2-3.jpeg",
+    ],
     colors: [
-      { name: "Negro", hex: "#111111" },
+      { name: "Taupe", hex: "#8b7d6b" },
     ],
     sizes: SIZES_UPPER,
     isNew: true,
     description:
-      "Remera negra de algodón con estampado gráfico en el pecho. Corte regular fit y tela suave al tacto.",
+      "Remera de tejido waffle (panal) en color taupe con estampado gótico negro en el pecho, flanqueado por alas y detalles ornamentales. Fit oversize con hombros caídos y largo extendido. Estilo streetwear urbano alternativo.",
   },
   {
     id: "h-remera-3",
-    name: "Remera Básica Roja",
+    name: "Remera The Art of Doing Nothing",
     gender: "hombre",
     category: "remeras",
     price: 16990,
     originalPrice: 21990,
-    image: "/images/products/remera-hombre-3.jpg",
+    image: "/images/products/remera-hombre-3-1.jpeg",
+    gallery: [
+      "/images/products/remera-hombre-3-2.jpeg",
+      "/images/products/remera-hombre-3-3.jpeg",
+    ],
     colors: [
-      { name: "Rojo", hex: "#dc2626" },
+      { name: "Blanco", hex: "#f5f5f5" },
     ],
     sizes: SIZES_UPPER,
     description:
-      "Remera básica en rojo intenso de jersey de algodón. Cuello redondo, corte regular y tela transpirable para todo el día.",
+      "Remera oversize blanca de algodón con gráficos minimalistas en pecho: 'NOT TOMORROW NOT DAY' en negro y 'THE ART OF Doing Nothing' en verde. Etiqueta de marca SOVIET en espalda. Fit relajado streetwear.",
   },
   {
     id: "h-jean-azul",
