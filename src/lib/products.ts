@@ -105,6 +105,51 @@ export const PRODUCTS: Product[] = [
     description: "Remera slim fit en jersey elásticoico, ideal para uso diario.",
   },
   {
+    id: "h-remera-1",
+    name: "Remera Oversize Blanca",
+    gender: "hombre",
+    category: "remeras",
+    price: 18990,
+    image: "/images/products/remera-hombre-1.jpg",
+    colors: [
+      { name: "Blanco", hex: "#f5f5f5" },
+    ],
+    sizes: SIZES_UPPER,
+    isNew: true,
+    description:
+      "Remera oversize de algodón pesado en blanco, cuello redondo reforzado y hombros caídos. Look streetwear cómodo y versátil.",
+  },
+  {
+    id: "h-remera-2",
+    name: "Remera Gráfica Negra",
+    gender: "hombre",
+    category: "remeras",
+    price: 21990,
+    image: "/images/products/remera-hombre-2.jpg",
+    colors: [
+      { name: "Negro", hex: "#111111" },
+    ],
+    sizes: SIZES_UPPER,
+    isNew: true,
+    description:
+      "Remera negra de algodón con estampado gráfico en el pecho. Corte regular fit y tela suave al tacto.",
+  },
+  {
+    id: "h-remera-3",
+    name: "Remera Básica Roja",
+    gender: "hombre",
+    category: "remeras",
+    price: 16990,
+    originalPrice: 21990,
+    image: "/images/products/remera-hombre-3.jpg",
+    colors: [
+      { name: "Rojo", hex: "#dc2626" },
+    ],
+    sizes: SIZES_UPPER,
+    description:
+      "Remera básica en rojo intenso de jersey de algodón. Cuello redondo, corte regular y tela transpirable para todo el día.",
+  },
+  {
     id: "h-jean-azul",
     name: "Jean Slim Azul",
     gender: "hombre",
