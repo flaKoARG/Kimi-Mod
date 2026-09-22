@@ -49,8 +49,8 @@ export const CATEGORIES: CategoryInfo[] = [
   },
   {
     id: "camperas",
-    name: "Camperas",
-    description: "Abrigos urbanos para todo el año.",
+    name: "Camperas y Buzos",
+    description: "Abrigos urbanos: camperas y buzos para todo el año.",
     image: "/images/cat-camperas.png",
   },
   {
@@ -64,7 +64,7 @@ export const CATEGORIES: CategoryInfo[] = [
 export const CATEGORY_LABEL: Record<CategoryId, string> = {
   pantalones: "Pantalones",
   remeras: "Remeras",
-  camperas: "Camperas",
+  camperas: "Camperas y Buzos",
   polleras: "Polleras",
 };
 
@@ -168,6 +168,25 @@ export const PRODUCTS: Product[] = [
     sizes: SIZES_UPPER,
     description:
       "Campera de frizado (french terry) verde bosque con paneles color-block crema en espalda. Cuello alto, media cremillera y puños acanalados, fit relajado.",
+  },
+  {
+    id: "h-buzo",
+    name: "Buzo Oversize Gris",
+    gender: "hombre",
+    category: "camperas",
+    price: 40000,
+    image: "/images/products/h-buzo.jpg",
+    gallery: [
+      "/images/products/h-buzo-2.jpg",
+      "/images/products/h-buzo-3.jpg",
+    ],
+    colors: [
+      { name: "Gris", hex: "#b8b3a8" },
+    ],
+    sizes: SIZES_UPPER,
+    isNew: true,
+    description:
+      "Buzo hoodie de frizado de algodón en gris claro (oatmeal), con capucha sin cordones, bolsillo canguro y puños acanalados. Hombros caídos y fit oversize para un look streetwear cómodo.",
   },
   // ---------------- MUJER ----------------
   {
