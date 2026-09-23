@@ -269,13 +269,14 @@ function QuickViewBody({
           </div>
           <Button
             size="lg"
-            className="flex-1 gap-2 bg-brown-dark text-base text-white hover:bg-brown-dark/90"
+            className="flex-1 gap-0 bg-brown-dark hover:bg-brown-dark/90"
+            aria-label="Agregar al carrito"
             onClick={() => {
               add(product, size, color, qty);
               onOpenChange(false);
             }}
           >
-            <ShoppingBag className="h-5 w-5" /> Agregar al carrito
+            <ShoppingBag className="h-7 w-7" />
           </Button>
         </div>
       </div>
