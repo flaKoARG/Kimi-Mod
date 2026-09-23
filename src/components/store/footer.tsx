@@ -19,12 +19,12 @@ export function Footer({ onTab }: FooterProps) {
             className="h-14 w-auto rounded-lg object-contain"
           />
           <p className="mt-3 max-w-xs text-sm text-zinc-400">
-            Indumentaria urbana para mujer y hombre. Diseño propio, tela premium
+            Indumentaria urbana para mujer y hombre. Diseño urbano y estilo nuevo, tela premium
             y precios accesibles.
           </p>
           <div className="mt-4 flex gap-3">
             <a
-              href="#"
+              href="https://www.instagram.com/kimi.mod"
               className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 transition-colors hover:border-primary hover:text-primary"
               aria-label="Instagram"
             >
@@ -89,7 +89,7 @@ export function Footer({ onTab }: FooterProps) {
               <Phone className="h-4 w-4 text-primary" /> +54 11 5555-0123
             </li>
             <li className="flex items-center gap-2">
-              <MapPin className="h-4 w-4 text-primary" /> Av. Córdoba 1234, CABA
+              <MapPin className="h-4 w-4 text-primary" /> Santa Lucía, San Juan
             </li>
           </ul>
         </div>
