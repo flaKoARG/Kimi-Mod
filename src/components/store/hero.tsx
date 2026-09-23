@@ -128,25 +128,20 @@ export function Hero({ onTab }: HeroProps) {
             key={s.image}
             className={cn(
               "absolute inset-0 transition-opacity duration-1000 ease-out",
-              i === active ? "opacity-100" : "opacity-0",
-              isBanner && i === 0 && "flex items-center justify-center p-4 sm:p-8"
+              i === active ? "opacity-100" : "opacity-0"
             )}
           >
             <img
               src={s.image}
               alt={s.alt}
-              className={cn(
-                isBanner && i === 0
-                  ? "h-auto max-h-[60vh] w-full max-w-4xl object-contain sm:max-h-[65vh]"
-                  : "h-full w-full object-cover object-center"
-              )}
+              className="h-full w-full object-cover object-center"
             />
             {/* Overlay para legibilidad del texto */}
             {!isBanner && (
               <div className="absolute inset-0 bg-gradient-to-r from-brown-dark/90 via-brown-dark/60 to-brown-dark/30" />
             )}
             {isBanner && (
-              <div className="absolute inset-0 bg-brown-dark/40" />
+              <div className="absolute inset-0 bg-gradient-to-t from-brown-dark/70 via-brown-dark/20 to-brown-dark/40" />
             )}
           </div>
         ))}
@@ -156,21 +151,25 @@ export function Hero({ onTab }: HeroProps) {
 
       {/* Contenido */}
       <div className="relative mx-auto flex min-h-[560px] max-w-7xl flex-col items-center justify-center px-4 py-16 text-center sm:px-6 lg:min-h-[640px] lg:px-8">
-        <span
-          key={`eyebrow-${active}`}
-          className="animate-in fade-in slide-in-from-bottom-2 duration-500 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-wide backdrop-blur"
-        >
-          {slide.eyebrow}
-        </span>
+        {!isBanner && (
+          <>
+            <span
+              key={`eyebrow-${active}`}
+              className="animate-in fade-in slide-in-from-bottom-2 duration-500 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-wide backdrop-blur"
+            >
+              {slide.eyebrow}
+            </span>
 
-        <h1
-          key={`title-${active}`}
-          className="animate-in fade-in slide-in-from-bottom-3 duration-700 mt-4 text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl"
-        >
-          {slide.title}
-          <br />
-          <span className="text-primary">{slide.highlight}</span>
-        </h1>
+            <h1
+              key={`title-${active}`}
+              className="animate-in fade-in slide-in-from-bottom-3 duration-700 mt-4 text-4xl font-black leading-[1.05] tracking-tight sm:text-5xl lg:text-6xl"
+            >
+              {slide.title}
+              <br />
+              <span className="text-primary">{slide.highlight}</span>
+            </h1>
+          </>
+        )}
 
         {/* La descripción solo se muestra en el slide del banner (no en las prendas) */}
         {isBanner && (
