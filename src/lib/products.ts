@@ -1,5 +1,10 @@
 export type Gender = "hombre" | "mujer";
-export type CategoryId = "pantalones" | "remeras" | "camperas";
+export type CategoryId =
+  | "pantalones"
+  | "remeras"
+  | "camperas"
+  | "polleras"
+  | "tops";
 
 export interface Product {
   id: string;
@@ -57,12 +62,26 @@ export const CATEGORIES: CategoryInfo[] = [
     description: "Abrigos urbanos: camperas y buzos para todo el año.",
     image: "/images/products/h-campera-brave.jpg",
   },
+  {
+    id: "tops",
+    name: "Tops y Blusas",
+    description: "Tops y blusas con diseños femeninos y modernos.",
+    image: "/images/products/burgundy.jpeg",
+  },
+  {
+    id: "polleras",
+    name: "Polleras y Shorts",
+    description: "Polleras y shorts con estilos urbanos y de oficina.",
+    image: "/images/products/dark-cherry.jpeg",
+  },
 ];
 
 export const CATEGORY_LABEL: Record<CategoryId, string> = {
   pantalones: "Pantalones",
   remeras: "Remeras",
   camperas: "Camperas y Buzos",
+  tops: "Tops y Blusas",
+  polleras: "Polleras y Shorts",
 };
 
 const SIZES_UPPER = ["S", "M", "L", "XL"];
@@ -360,6 +379,127 @@ export const PRODUCTS: Product[] = [
     isNew: true,
     description:
       "Campera biker de cuero sintético negro con cierre frontal asimétrico y cuello solapa con botones a presión. Costuras curvas, ajuste entallado y look urbano motero.",
+  },
+  // ---------------- MUJER: TOPS Y BLUSAS ----------------
+  {
+    id: "m-mocha-muse",
+    name: "Mocha Muse",
+    gender: "mujer",
+    category: "tops",
+    price: 10000,
+    image: "/images/products/mocha-muse.jpeg",
+    colors: [
+      { name: "Mocha", hex: "#a08060" },
+    ],
+    sizes: ["M"],
+    brand: "Opposite",
+    fit: "Top con detalles en encaje",
+    isNew: true,
+    description:
+      "Top con detalles en encaje en tono mocha. Tejido suave con terminaciones delicadas, ideal para looks femeninos y elegantes.",
+  },
+  {
+    id: "m-burgundy",
+    name: "Burgundy Veil",
+    gender: "mujer",
+    category: "tops",
+    price: 15000,
+    image: "/images/products/burgundy.jpeg",
+    colors: [
+      { name: "Borgoña", hex: "#6B1F2A" },
+    ],
+    sizes: ["XS"],
+    brand: "Alaniz",
+    fit: "Blusa con escote translúcido",
+    isNew: true,
+    description:
+      "Blusa con escote translúcido en color borgoña. Tejido fluido con detalle de transparencia en el escote, look sofisticado y sensual.",
+  },
+  {
+    id: "m-wild",
+    name: "Wild Affair",
+    gender: "mujer",
+    category: "tops",
+    price: 15000,
+    image: "/images/products/wild.jpeg",
+    colors: [
+      { name: "Animal Print", hex: "#8a6a4a" },
+    ],
+    sizes: ["L"],
+    brand: "Alaniz",
+    fit: "Blusa animal print",
+    isNew: true,
+    description:
+      "Blusa con estampado animal print. Tejido ligero y caída fluida, look atrevido y moderno para el día o la noche.",
+  },
+  {
+    id: "m-lemon",
+    name: "Lemon Bloom",
+    gender: "mujer",
+    category: "tops",
+    price: 10000,
+    image: "/images/products/lemon.jpeg",
+    colors: [
+      { name: "Lemon", hex: "#F4E04D" },
+    ],
+    sizes: ["M"],
+    brand: "Opposite",
+    fit: "Top translúcido",
+    isNew: true,
+    description:
+      "Top translúcido en color amarillo lemon. Tejido liviano con transparencia sutil, fresco y veraniego, ideal para combinar con tops básicos.",
+  },
+  // ---------------- MUJER: POLLERAS Y SHORTS ----------------
+  {
+    id: "m-urban-pocket",
+    name: "Urban Pocket",
+    gender: "mujer",
+    category: "polleras",
+    price: 25000,
+    image: "/images/products/urban-pocket.jpeg",
+    colors: [
+      { name: "Azul Jean", hex: "#4a6fa5" },
+    ],
+    sizes: ["S"],
+    brand: "Opposite",
+    fit: "Pollera de Jean",
+    isNew: true,
+    description:
+      "Pollera de jean con bolsillos delanteros. Denim rígido con lavado medio, largo por encima de la rodilla y look urbano casual.",
+  },
+  {
+    id: "m-midnight",
+    name: "Midnight Stripe",
+    gender: "mujer",
+    category: "polleras",
+    price: 20000,
+    image: "/images/products/midnight.jpeg",
+    colors: [
+      { name: "Negro", hex: "#1a1a1a" },
+    ],
+    sizes: ["S"],
+    brand: "Icono",
+    fit: "Pollera estilo oficina",
+    isNew: true,
+    description:
+      "Pollera estilo oficina con detalles a rayas. Largo midi, corte entallado y tejido con caída, ideal para looks formales y de oficina.",
+  },
+  {
+    id: "m-dark-cherry",
+    name: "Dark Cherry",
+    gender: "mujer",
+    category: "polleras",
+    price: 25000,
+    image: "/images/products/dark-cherry.jpeg",
+    colors: [
+      { name: "Negro Cuero", hex: "#0D0D0D" },
+    ],
+    sizes: ["S"],
+    brand: "Opposite",
+    fit: "Short engomado",
+    isNew: true,
+    description:
+      "Short engomado de cuero sintético en negro. Ajuste entallado, look urbano y atrevido, ideal para combinar con tops y blusas.",
   },
 ];
 
