@@ -40,7 +40,7 @@ export function CatalogView({ title, subtitle, products, onQuickView }: CatalogV
       </div>
 
       {/* Filter chips */}
-      <div className="mt-5 flex flex-wrap gap-2">
+      <div className="mt-5 flex flex-wrap items-center gap-2">
         <Chip active={filter === "all"} onClick={() => setFilter("all")}>
           Todos
         </Chip>
@@ -49,7 +49,7 @@ export function CatalogView({ title, subtitle, products, onQuickView }: CatalogV
             {CATEGORY_LABEL[c.id]}
           </Chip>
         ))}
-        <span className="ml-auto self-center text-xs text-muted-foreground">
+        <span className="w-full text-xs text-muted-foreground sm:w-auto sm:ml-auto sm:self-center">
           {filtered.length} producto{filtered.length === 1 ? "" : "s"}
         </span>
       </div>

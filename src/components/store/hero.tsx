@@ -199,7 +199,7 @@ export function Hero({ onTab }: HeroProps) {
           ))}
         </div>
 
-        <div className="mt-10 grid w-full max-w-md grid-cols-3 gap-3 text-xs">
+        <div className="mt-10 grid w-full max-w-md grid-cols-3 gap-2 text-xs sm:gap-3">
           <Feature icon={<Truck className="h-4 w-4" />} title="Envíos" desc="A San Juan" />
           <Feature icon={<RefreshCw className="h-4 w-4" />} title="Medios" desc="Efectivo/Transf." />
           <Feature icon={<ShieldCheck className="h-4 w-4" />} title="Pago" desc="100% seguro" />
@@ -244,11 +244,11 @@ export function Hero({ onTab }: HeroProps) {
 
 function Feature({ icon, title, desc }: { icon: React.ReactNode; title: string; desc: string }) {
   return (
-    <div className="flex items-center gap-2 rounded-lg border border-white/10 bg-white/5 px-3 py-2 backdrop-blur">
-      <span className="text-primary">{icon}</span>
-      <div className="leading-tight">
-        <p className="font-semibold text-white">{title}</p>
-        <p className="text-zinc-300">{desc}</p>
+    <div className="flex min-w-0 items-center gap-2 overflow-hidden rounded-lg border border-white/10 bg-white/5 px-2 py-2 backdrop-blur sm:px-3">
+      <span className="flex-none text-primary">{icon}</span>
+      <div className="min-w-0 leading-tight">
+        <p className="truncate font-semibold text-white">{title}</p>
+        <p className="break-words text-zinc-300 [overflow-wrap:anywhere]">{desc}</p>
       </div>
     </div>
   );

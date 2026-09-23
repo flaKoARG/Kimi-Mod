@@ -48,15 +48,15 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
         </button>
       </div>
 
-      <div className="flex flex-1 flex-col gap-2 p-4">
+      <div className="flex flex-1 flex-col gap-2 p-3 sm:p-4">
         <div className="flex items-start justify-between gap-2">
-          <h3 className="line-clamp-1 text-sm font-semibold text-foreground">
+          <h3 className="line-clamp-2 min-w-0 break-words text-sm font-semibold text-foreground">
             {product.name}
           </h3>
         </div>
 
         {/* Colors */}
-        <div className="flex items-center gap-1.5">
+        <div className="flex flex-wrap items-center gap-1.5">
           {product.colors.map((c) => (
             <button
               key={c.name}
@@ -64,7 +64,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
               title={c.name}
               onClick={() => setColor(c.name)}
               className={cn(
-                "h-4 w-4 rounded-full border transition-transform",
+                "h-4 w-4 flex-none rounded-full border transition-transform",
                 color === c.name
                   ? "border-primary ring-2 ring-primary/30 scale-110"
                   : "border-zinc-300 hover:scale-110"
@@ -76,8 +76,8 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
         </div>
 
         {/* Price */}
-        <div className="mt-1 flex items-baseline gap-2">
-          <span className="text-base font-bold text-foreground">
+        <div className="mt-1 flex flex-wrap items-baseline gap-x-2 gap-y-0">
+          <span className="text-sm font-bold text-foreground sm:text-base">
             {formatPrice(product.price)}
           </span>
           {product.originalPrice && (
