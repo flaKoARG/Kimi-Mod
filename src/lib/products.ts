@@ -110,10 +110,10 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "h-remera-1",
-    name: "Remera Raggjante Sportsunion",
+    name: "Blue Legacy",
     gender: "hombre",
     category: "remeras",
-    price: 18990,
+    price: 25000,
     image: "/images/products/remera-hombre-1-1.jpeg",
     gallery: [
       "/images/products/remera-hombre-1-2.jpeg",
@@ -122,17 +122,19 @@ export const PRODUCTS: Product[] = [
     colors: [
       { name: "Azul", hex: "#1e3a8a" },
     ],
-    sizes: SIZES_UPPER,
+    sizes: ["M"],
+    brand: "Icono",
+    fit: "Deportiva Retro",
     isNew: true,
     description:
       "Remera retro deportiva en azul con detalles en crema: cuello tipo polo, puños y piping laterales. Estampado gráfico en pecho con tipografía cursiva y emblemas vintage. Fit relajado y tela suave transpirable.",
   },
   {
     id: "h-remera-2",
-    name: "Remera Gráfica Waffle",
+    name: "Worn Fate",
     gender: "hombre",
     category: "remeras",
-    price: 21990,
+    price: 15000,
     image: "/images/products/remera-hombre-2-1.jpeg",
     gallery: [
       "/images/products/remera-hombre-2-2.jpeg",
@@ -141,18 +143,19 @@ export const PRODUCTS: Product[] = [
     colors: [
       { name: "Taupe", hex: "#8b7d6b" },
     ],
-    sizes: SIZES_UPPER,
+    sizes: ["L"],
+    brand: "Opposite",
+    fit: "Algodón",
     isNew: true,
     description:
-      "Remera de tejido waffle (panal) en color taupe con estampado gótico negro en el pecho, flanqueado por alas y detalles ornamentales. Fit oversize con hombros caídos y largo extendido. Estilo streetwear urbano alternativo.",
+      "Remera de algodón en color taupe con estampado gótico negro en el pecho, flanqueado por alas y detalles ornamentales. Fit oversize con hombros caídos y largo extendido. Estilo streetwear urbano alternativo.",
   },
   {
     id: "h-remera-3",
-    name: "Remera The Art of Doing Nothing",
+    name: "Off Duty",
     gender: "hombre",
     category: "remeras",
-    price: 16990,
-    originalPrice: 21990,
+    price: 15000,
     image: "/images/products/remera-hombre-3-1.jpeg",
     gallery: [
       "/images/products/remera-hombre-3-2.jpeg",
@@ -161,7 +164,9 @@ export const PRODUCTS: Product[] = [
     colors: [
       { name: "Blanco", hex: "#f5f5f5" },
     ],
-    sizes: SIZES_UPPER,
+    sizes: ["L"],
+    brand: "Soviet",
+    fit: "Algodón",
     description:
       "Remera oversize blanca de algodón con gráficos minimalistas en pecho: 'NOT TOMORROW NOT DAY' en negro y 'THE ART OF Doing Nothing' en verde. Etiqueta de marca SOVIET en espalda. Fit relajado streetwear.",
   },
@@ -229,11 +234,10 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "h-campera-brave",
-    name: "Campera Clusterman Brave",
+    name: "Brave",
     gender: "hombre",
     category: "camperas",
-    price: 54990,
-    originalPrice: 69990,
+    price: 40000,
     image: "/images/products/h-campera-brave.jpg",
     gallery: [
       "/images/products/h-campera-brave-2.jpg",
@@ -243,32 +247,36 @@ export const PRODUCTS: Product[] = [
     colors: [
       { name: "Negro", hex: "#111111" },
     ],
-    sizes: SIZES_UPPER,
+    sizes: ["L"],
+    brand: "ClusterUrban",
+    fit: "Rompeviento Forrada",
     isNew: true,
     description:
-      "Campera bomber de nylon acolchado en negro, con estampado gráfico blanco y piping contrastante. Cierre frontal, puños acanalados y bolsillos laterales.",
+      "Campera rompeviento forrada de nylon acolchado en negro, con estampado gráfico blanco y piping contrastante. Cierre frontal, puños acanalados y bolsillos laterales.",
   },
   {
     id: "h-campera-opposite",
-    name: "Campera Opposite",
+    name: "Forest",
     gender: "hombre",
     category: "camperas",
-    price: 42990,
+    price: 25000,
     image: "/images/products/h-campera-opposite.jpg",
     gallery: ["/images/products/h-campera-opposite-2.jpg"],
     colors: [
       { name: "Verde Bosque", hex: "#2f4f3a" },
     ],
-    sizes: SIZES_UPPER,
+    sizes: ["L"],
+    brand: "Opposite",
+    fit: "Algodón",
     description:
-      "Campera de frizado (french terry) verde bosque con paneles color-block crema en espalda. Cuello alto, media cremillera y puños acanalados, fit relajado.",
+      "Campera de algodón (frizado/french terry) verde bosque con paneles color-block crema en espalda. Cuello alto, media cremillera y puños acanalados, fit relajado.",
   },
   {
     id: "h-buzo",
-    name: "Buzo Oversize Gris",
+    name: "Concrete Wings",
     gender: "hombre",
     category: "camperas",
-    price: 40000,
+    price: 20000,
     image: "/images/products/h-buzo.jpg",
     gallery: [
       "/images/products/h-buzo-2.jpg",
@@ -277,17 +285,19 @@ export const PRODUCTS: Product[] = [
     colors: [
       { name: "Gris", hex: "#b8b3a8" },
     ],
-    sizes: SIZES_UPPER,
+    sizes: ["XL"],
+    brand: "Opposite",
+    fit: "Algodón",
     isNew: true,
     description:
-      "Buzo hoodie de frizado de algodón en gris claro (oatmeal), con capucha sin cordones, bolsillo canguro y puños acanalados. Hombros caídos y fit oversize para un look streetwear cómodo.",
+      "Buzo de algodón (frizado) en gris claro (oatmeal), con capucha sin cordones, bolsillo canguro y puños acanalados. Hombros caídos y fit oversize para un look streetwear cómodo.",
   },
   {
     id: "h-buzo-mixed",
-    name: "Buzo Mixed Feelings",
+    name: "Black Tiger",
     gender: "hombre",
     category: "camperas",
-    price: 40000,
+    price: 25000,
     image: "/images/products/h-buzo-mixed.jpg",
     gallery: [
       "/images/products/h-buzo-mixed-2.jpg",
@@ -296,10 +306,12 @@ export const PRODUCTS: Product[] = [
     colors: [
       { name: "Negro", hex: "#111111" },
     ],
-    sizes: SIZES_UPPER,
+    sizes: ["L"],
+    brand: "ClusterUrban",
+    fit: "Algodón con Cierre",
     isNew: true,
     description:
-      "Buzo quarter-zip negro de frizado de algodón con estampado gráfico blanco 'Mixed Feelings London' en el pecho. Cuello alto con media cremillera, hombros caídos, puños acanalados y fit oversize unisex.",
+      "Buzo de algodón con cierre en cuello, negro de frizado con estampado gráfico blanco en el pecho. Cuello alto con media cremillera, hombros caídos, puños acanalados y fit oversize unisex.",
   },
   // ---------------- MUJER ----------------
   {
@@ -422,6 +434,23 @@ export const PRODUCTS: Product[] = [
     sizes: SIZES_SKIRT,
     isNew: true,
     description: "Mini pollera de denim con botones delanteros y cintura alta.",
+  },
+  {
+    id: "m-campera-noir",
+    name: "Noir",
+    gender: "mujer",
+    category: "camperas",
+    price: 25000,
+    image: "/images/products/m-campera-noir.jpg",
+    colors: [
+      { name: "Negro", hex: "#0D0D0D" },
+    ],
+    sizes: ["M"],
+    brand: "Icono",
+    fit: "Campera Engomada",
+    isNew: true,
+    description:
+      "Campera engomada de cuero sintético en negro cuero. Cierre frontal, cuello redondo, ajuste entallado y look urbano sofisticado.",
   },
   {
     id: "m-campera",
