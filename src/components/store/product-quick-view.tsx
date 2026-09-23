@@ -161,7 +161,9 @@ function QuickViewBody({
       <div className="flex h-auto flex-col gap-4 overflow-visible p-6 scrollbar-thin md:h-full md:overflow-y-auto md:p-7">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wider text-primary">
-            {product.gender === "hombre" ? "Hombre" : "Mujer"} · {product.category}
+            {product.brand ? `${product.brand} · ` : ""}
+            {product.gender === "hombre" ? "Hombre" : "Mujer"}
+            {product.fit ? ` · ${product.fit}` : ""}
           </p>
           <h2 className="mt-1.5 text-2xl font-black leading-tight tracking-tight text-foreground sm:text-3xl">
             {product.name}

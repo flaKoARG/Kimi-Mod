@@ -16,6 +16,10 @@ export interface Product {
   colors: { name: string; hex: string }[];
   sizes: string[];
   isNew?: boolean;
+  /** Marca del producto (ej: Opposite, Icono, JJO). */
+  brand?: string;
+  /** Tipo de corte/fit (ej: Baggy, Wide Leg, Barrel). */
+  fit?: string;
   description: string;
 }
 
@@ -163,49 +167,52 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "h-jean-1",
-    name: "Jean Straight Celeste",
+    name: "Vintage Blue · Baggy",
     gender: "hombre",
     category: "pantalones",
-    price: 34990,
+    price: 35000,
     image: "/images/products/PantalonJean1.jpeg",
     gallery: [
       "/images/products/PantalonJean1-2.jpeg",
       "/images/products/PantalonJean1-3.jpeg",
     ],
     colors: [
-      { name: "Celeste", hex: "#9bb5d6" },
+      { name: "Azul Vintage", hex: "#4a6fa5" },
     ],
-    sizes: SIZES_WAIST,
+    sizes: ["44"],
+    brand: "Opposite",
+    fit: "Baggy",
     isNew: true,
     description:
-      "Jean de lavado celeste claro con corte straight relajado y tiro medio. Cinco bolsillos, parche de cuero en espalda y denim suave al tacto.",
+      "Jean baggy de lavado azul vintage con corte recto holgado. Cinco bolsillos con costuras visibles y lavado desgastado sutil.",
   },
   {
     id: "h-jean-2",
-    name: "Jean Baggy Azul Medio",
+    name: "Ice Wash · Barrel",
     gender: "hombre",
     category: "pantalones",
-    price: 36990,
+    price: 35000,
     image: "/images/products/PantalonJean2.jpeg",
     gallery: [
       "/images/products/PantalonJean2-2.jpeg",
       "/images/products/PantalonJean2-3.jpeg",
     ],
     colors: [
-      { name: "Azul Medio", hex: "#4a6fa5" },
+      { name: "Celeste Hielo", hex: "#9bb5d6" },
     ],
-    sizes: SIZES_WAIST,
+    sizes: ["42"],
+    brand: "Opposite",
+    fit: "Barrel",
     isNew: true,
     description:
-      "Jean baggy de lavado azul medio con corte recto holgado y largo ligeramente corto. Cinco bolsillos con costuras visibles y lavado desgastado sutil.",
+      "Jean barrel fit de lavado celeste hielo con pierna curva y tiro medio. Cinco bolsillos con costuras visibles.",
   },
   {
     id: "h-jean-3",
-    name: "Jean Wide Leg Celeste",
+    name: "Shadow Relaxed · Relaxed Fit",
     gender: "hombre",
     category: "pantalones",
-    price: 35990,
-    originalPrice: 42990,
+    price: 35000,
     image: "/images/products/PantalonJean3.jpeg",
     gallery: [
       "/images/products/PantalonJean3-2.jpeg",
@@ -214,9 +221,11 @@ export const PRODUCTS: Product[] = [
     colors: [
       { name: "Celeste", hex: "#9bb5d6" },
     ],
-    sizes: SIZES_WAIST,
+    sizes: ["40"],
+    brand: "JJO",
+    fit: "Relaxed Fit",
     description:
-      "Jean wide leg de lavado celeste con tiro alto y pierna ancha. Cinco bolsillos, pliegues marcados y look relajado oversized.",
+      "Jean relaxed fit de lavado celeste con tiro alto y pierna ancha. Cinco bolsillos, pliegues marcados y look relajado oversize.",
   },
   {
     id: "h-campera-brave",
@@ -324,10 +333,10 @@ export const PRODUCTS: Product[] = [
   },
   {
     id: "m-jean-4",
-    name: "Jean Wide Leg Vintage",
+    name: "Denim Drift · Baggy Skater",
     gender: "mujer",
     category: "pantalones",
-    price: 33990,
+    price: 35000,
     image: "/images/products/PantalonJean4.jpeg",
     gallery: [
       "/images/products/PantalonJean4-2.jpeg",
@@ -336,17 +345,19 @@ export const PRODUCTS: Product[] = [
     colors: [
       { name: "Celeste Vintage", hex: "#a8b8d0" },
     ],
-    sizes: SIZES_WAIST,
+    sizes: ["42"],
+    brand: "Icono",
+    fit: "Baggy Skater",
     isNew: true,
     description:
-      "Jean wide leg de lavado celeste vintage con tiro alto y corte holgado. Cinco bolsillos clásicos, look retro y caída cómoda.",
+      "Jean baggy skater de lavado celeste vintage con tiro alto y corte holgado. Cinco bolsillos clásicos, look retro y caída cómoda.",
   },
   {
     id: "m-jean-5",
-    name: "Jean Roto Negro con Cadena",
+    name: "Leg Sky · Wide Leg",
     gender: "mujer",
     category: "pantalones",
-    price: 37990,
+    price: 35000,
     image: "/images/products/PantalonJean5.jpeg",
     gallery: [
       "/images/products/PantalonJean5-2.jpeg",
@@ -357,18 +368,19 @@ export const PRODUCTS: Product[] = [
     colors: [
       { name: "Negro", hex: "#1a1a1a" },
     ],
-    sizes: SIZES_WAIST,
+    sizes: ["42"],
+    brand: "Opposite",
+    fit: "Wide Leg",
     isNew: true,
     description:
-      "Jean negro de corte relajado con roturas en las rodillas y cadena decorativa en el bolsillo lateral. Estilo urbano con detalle de hardware.",
+      "Jean wide leg negro de corte relajado con roturas en las rodillas y cadena decorativa en el bolsillo lateral. Estilo urbano con detalle de hardware.",
   },
   {
     id: "m-jean-6",
-    name: "Jean Wide Leg Índigo",
+    name: "Stone Blue · Wide Leg",
     gender: "mujer",
     category: "pantalones",
-    price: 32990,
-    originalPrice: 39990,
+    price: 35000,
     image: "/images/products/PantalonJean6.jpeg",
     gallery: [
       "/images/products/PantalonJean6-2.jpeg",
@@ -377,7 +389,9 @@ export const PRODUCTS: Product[] = [
     colors: [
       { name: "Índigo", hex: "#1e3a5f" },
     ],
-    sizes: SIZES_WAIST,
+    sizes: ["40"],
+    brand: "Opposite",
+    fit: "Wide Leg",
     description:
       "Jean wide leg de lavado índigo oscuro con corte de pierna ancha y cinco bolsillos. Acabado limpio sin desgastes, ideal para combinar con todo.",
   },
