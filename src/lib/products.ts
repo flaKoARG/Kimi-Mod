@@ -1,5 +1,5 @@
 export type Gender = "hombre" | "mujer";
-export type CategoryId = "pantalones" | "remeras" | "camperas" | "polleras";
+export type CategoryId = "pantalones" | "remeras" | "camperas";
 
 export interface Product {
   id: string;
@@ -42,26 +42,20 @@ export const CATEGORIES: CategoryInfo[] = [
   {
     id: "pantalones",
     name: "Pantalones",
-    description: "Jeans, chinos y pantalones con corte y comfort.",
-    image: "/images/cat-pantalones.png",
+    description: "Jeans y pantalones con cortes modernos.",
+    image: "/images/products/PantalonJean1.jpeg",
   },
   {
     id: "remeras",
     name: "Remeras",
-    description: "Básicas y estampadas, algodón premium.",
-    image: "/images/cat-remeras.png",
+    description: "Algodón premium con diseños únicos.",
+    image: "/images/products/remera-hombre-1-1.jpeg",
   },
   {
     id: "camperas",
     name: "Camperas y Buzos",
     description: "Abrigos urbanos: camperas y buzos para todo el año.",
-    image: "/images/cat-camperas.png",
-  },
-  {
-    id: "polleras",
-    name: "Polleras",
-    description: "Faldas lápiz, jean y plisadas.",
-    image: "/images/cat-polleras.png",
+    image: "/images/products/h-campera-brave.jpg",
   },
 ];
 
@@ -69,45 +63,13 @@ export const CATEGORY_LABEL: Record<CategoryId, string> = {
   pantalones: "Pantalones",
   remeras: "Remeras",
   camperas: "Camperas y Buzos",
-  polleras: "Polleras",
 };
 
 const SIZES_UPPER = ["S", "M", "L", "XL"];
 const SIZES_WAIST = ["36", "38", "40", "42", "44"];
-const SIZES_SKIRT = ["36", "38", "40", "42"];
 
 export const PRODUCTS: Product[] = [
   // ---------------- HOMBRE ----------------
-  {
-    id: "h-remera-negra",
-    name: "Remera Esencial Negra",
-    gender: "hombre",
-    category: "remeras",
-    price: 14990,
-    originalPrice: 18990,
-    image: "/images/products/h-remera-negra.png",
-    colors: [
-      { name: "Negro", hex: "#111111" },
-      { name: "Azul", hex: "#1d4ed8" },
-    ],
-    sizes: SIZES_UPPER,
-    isNew: true,
-    description: "Remera de algodón peinado 24.1, corte regular fit y cuello reforzado.",
-  },
-  {
-    id: "h-remera-azul",
-    name: "Remera Slim Azul",
-    gender: "hombre",
-    category: "remeras",
-    price: 19990,
-    image: "/images/products/h-remera-azul.png",
-    colors: [
-      { name: "Azul", hex: "#1d4ed8" },
-      { name: "Negro", hex: "#111111" },
-    ],
-    sizes: SIZES_UPPER,
-    description: "Remera slim fit en jersey elásticoico, ideal para uso diario.",
-  },
   {
     id: "h-remera-1",
     name: "Blue Legacy",
@@ -315,35 +277,6 @@ export const PRODUCTS: Product[] = [
   },
   // ---------------- MUJER ----------------
   {
-    id: "m-remera-blanca",
-    name: "Remera Básica Blanca",
-    gender: "mujer",
-    category: "remeras",
-    price: 17990,
-    image: "/images/products/m-remera-blanca.png",
-    colors: [
-      { name: "Blanco", hex: "#f8f8f8" },
-      { name: "Negro", hex: "#111111" },
-    ],
-    sizes: SIZES_UPPER,
-    isNew: true,
-    description: "Remera cropped de algodón modal, caída suave y tiras finas.",
-  },
-  {
-    id: "m-remera-roja",
-    name: "Remera Roja",
-    gender: "mujer",
-    category: "remeras",
-    price: 14990,
-    originalPrice: 19990,
-    image: "/images/products/m-remera-roja.png",
-    colors: [
-      { name: "Rojo", hex: "#dc2626" },
-    ],
-    sizes: SIZES_UPPER,
-    description: "Remera manga corta en rojo intenso, cuello redondo y corte entallado.",
-  },
-  {
     id: "m-jean-4",
     name: "Denim Drift · Baggy Skater",
     gender: "mujer",
@@ -408,34 +341,6 @@ export const PRODUCTS: Product[] = [
       "Jean wide leg de lavado índigo oscuro con corte de pierna ancha y cinco bolsillos. Acabado limpio sin desgastes, ideal para combinar con todo.",
   },
   {
-    id: "m-pollera-negra",
-    name: "Pollera Lápiz Negra",
-    gender: "mujer",
-    category: "polleras",
-    price: 19990,
-    originalPrice: 26990,
-    image: "/images/products/m-pollera-negra.png",
-    colors: [
-      { name: "Negro", hex: "#111111" },
-    ],
-    sizes: SIZES_SKIRT,
-    description: "Pollera lápiz por debajo de la rodilla, tejido sarga con abertura posterior.",
-  },
-  {
-    id: "m-pollera-azul",
-    name: "Pollera Jean Azul",
-    gender: "mujer",
-    category: "polleras",
-    price: 28990,
-    image: "/images/products/m-pollera-azul.png",
-    colors: [
-      { name: "Azul", hex: "#1e3a8a" },
-    ],
-    sizes: SIZES_SKIRT,
-    isNew: true,
-    description: "Mini pollera de denim con botones delanteros y cintura alta.",
-  },
-  {
     id: "m-campera-noir",
     name: "Noir",
     gender: "mujer",
@@ -455,21 +360,6 @@ export const PRODUCTS: Product[] = [
     isNew: true,
     description:
       "Campera biker de cuero sintético negro con cierre frontal asimétrico y cuello solapa con botones a presión. Costuras curvas, ajuste entallado y look urbano motero.",
-  },
-  {
-    id: "m-campera",
-    name: "Campera Lino",
-    gender: "mujer",
-    category: "camperas",
-    price: 34990,
-    originalPrice: 46990,
-    image: "/images/products/m-campera.png",
-    colors: [
-      { name: "Lino", hex: "#d8cdb5" },
-      { name: "Negro", hex: "#111111" },
-    ],
-    sizes: SIZES_UPPER,
-    description: "Sobrecampera de lino entallada, abierta con cartera y botones forrados.",
   },
 ];
 
