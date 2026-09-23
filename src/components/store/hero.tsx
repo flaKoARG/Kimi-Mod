@@ -200,8 +200,8 @@ export function Hero({ onTab }: HeroProps) {
         </div>
 
         <div className="mt-10 grid w-full max-w-md grid-cols-3 gap-3 text-xs">
-          <Feature icon={<Truck className="h-4 w-4" />} title="Envíos" desc="A todo el país" />
-          <Feature icon={<RefreshCw className="h-4 w-4" />} title="Cambios" desc="30 días" />
+          <Feature icon={<Truck className="h-4 w-4" />} title="Envíos" desc="A San Juan" />
+          <Feature icon={<RefreshCw className="h-4 w-4" />} title="Medios" desc="Efectivo/Transferencia" />
           <Feature icon={<ShieldCheck className="h-4 w-4" />} title="Pago" desc="100% seguro" />
         </div>
       </div>
