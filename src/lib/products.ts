@@ -66,13 +66,13 @@ export const CATEGORIES: CategoryInfo[] = [
     id: "tops",
     name: "Tops y Blusas",
     description: "Tops y blusas con diseños femeninos y modernos.",
-    image: "/images/products/burgundy.jpeg",
+    image: "/images/products/Burgundy.jpeg",
   },
   {
     id: "polleras",
     name: "Polleras y Shorts",
     description: "Polleras y shorts con estilos urbanos y de oficina.",
-    image: "/images/products/dark-cherry.jpeg",
+    image: "/images/products/DarkCherry.jpeg",
   },
 ];
 
@@ -387,7 +387,11 @@ export const PRODUCTS: Product[] = [
     gender: "mujer",
     category: "tops",
     price: 10000,
-    image: "/images/products/mocha-muse.jpeg",
+    image: "/images/products/MochaMuse.jpeg",
+    gallery: [
+      "/images/products/MochaMuse-2.jpeg",
+      "/images/products/MochaMuse-3.jpeg",
+    ],
     colors: [
       { name: "Mocha", hex: "#a08060" },
     ],
@@ -404,7 +408,11 @@ export const PRODUCTS: Product[] = [
     gender: "mujer",
     category: "tops",
     price: 15000,
-    image: "/images/products/burgundy.jpeg",
+    image: "/images/products/Burgundy.jpeg",
+    gallery: [
+      "/images/products/Burgundy-2.jpeg",
+      "/images/products/Burgundy-3.jpeg",
+    ],
     colors: [
       { name: "Borgoña", hex: "#6B1F2A" },
     ],
@@ -421,7 +429,11 @@ export const PRODUCTS: Product[] = [
     gender: "mujer",
     category: "tops",
     price: 15000,
-    image: "/images/products/wild.jpeg",
+    image: "/images/products/Wild.jpeg",
+    gallery: [
+      "/images/products/Wild-2.jpeg",
+      "/images/products/Wild-3.jpeg",
+    ],
     colors: [
       { name: "Animal Print", hex: "#8a6a4a" },
     ],
@@ -438,7 +450,11 @@ export const PRODUCTS: Product[] = [
     gender: "mujer",
     category: "tops",
     price: 10000,
-    image: "/images/products/lemon.jpeg",
+    image: "/images/products/Lemon.jpeg",
+    gallery: [
+      "/images/products/Lemon-2.jpeg",
+      "/images/products/Lemon-3.jpeg",
+    ],
     colors: [
       { name: "Lemon", hex: "#F4E04D" },
     ],
@@ -456,7 +472,12 @@ export const PRODUCTS: Product[] = [
     gender: "mujer",
     category: "polleras",
     price: 25000,
-    image: "/images/products/urban-pocket.jpeg",
+    image: "/images/products/UrbanPocket.jpeg",
+    gallery: [
+      "/images/products/UrbanPocket-2.jpeg",
+      "/images/products/UrbanPocket-3.jpeg",
+      "/images/products/UrbanPocket-4.jpeg",
+    ],
     colors: [
       { name: "Azul Jean", hex: "#4a6fa5" },
     ],
@@ -473,7 +494,11 @@ export const PRODUCTS: Product[] = [
     gender: "mujer",
     category: "polleras",
     price: 20000,
-    image: "/images/products/midnight.jpeg",
+    image: "/images/products/Midnight.jpeg",
+    gallery: [
+      "/images/products/Midnight-2.jpeg",
+      "/images/products/Midnight-3.jpeg",
+    ],
     colors: [
       { name: "Negro", hex: "#1a1a1a" },
     ],
@@ -490,7 +515,11 @@ export const PRODUCTS: Product[] = [
     gender: "mujer",
     category: "polleras",
     price: 25000,
-    image: "/images/products/dark-cherry.jpeg",
+    image: "/images/products/DarkCherry.jpeg",
+    gallery: [
+      "/images/products/DarkCherry-2.jpeg",
+      "/images/products/DarkCherry-3.jpeg",
+    ],
     colors: [
       { name: "Negro Cuero", hex: "#0D0D0D" },
     ],
