@@ -27,12 +27,12 @@ export function Hero({ onTab }: HeroProps) {
         </div>
 
         <span className="mt-8 inline-flex items-center rounded-full border border-white/20 bg-white/5 px-3 py-1 text-xs font-semibold uppercase tracking-wide backdrop-blur">
-          Nueva colección · Otoño/Invierno
+          Todo lo Nuevo · Otoño/Invierno
         </span>
 
         <p className="mt-4 max-w-md text-sm text-zinc-200 sm:text-base">
           Pantalones, remeras, camperas y polleras. Diseño propio para mujer y
-          hombre. Hasta 40% OFF en seleccionados.
+          hombre. Hasta 20% OFF en seleccionados.
         </p>
 
         <div className="mt-6 flex flex-wrap justify-center gap-3">
@@ -62,8 +62,8 @@ export function Hero({ onTab }: HeroProps) {
         </div>
 
         <div className="mt-10 grid w-full max-w-md grid-cols-3 gap-3 text-xs">
-          <Feature icon={<Truck className="h-4 w-4" />} title="Envíos" desc="A todo el país" />
-          <Feature icon={<RefreshCw className="h-4 w-4" />} title="Cambios" desc="30 días" />
+          <Feature icon={<Truck className="h-4 w-4" />} title="Envíos" desc="Solo San Juan" />
+          <Feature icon={<RefreshCw className="h-4 w-4" />} title="Cambios" desc="10 días" />
           <Feature icon={<ShieldCheck className="h-4 w-4" />} title="Pago" desc="100% seguro" />
         </div>
       </div>
