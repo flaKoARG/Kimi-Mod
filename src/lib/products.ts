@@ -441,16 +441,20 @@ export const PRODUCTS: Product[] = [
     gender: "mujer",
     category: "camperas",
     price: 25000,
-    image: "/images/products/m-campera-noir.jpg",
+    image: "/images/products/noir.jpeg",
+    gallery: [
+      "/images/products/noir-2.jpeg",
+      "/images/products/noir-3.jpeg",
+    ],
     colors: [
-      { name: "Negro", hex: "#0D0D0D" },
+      { name: "Negro Cuero", hex: "#0D0D0D" },
     ],
     sizes: ["M"],
     brand: "Icono",
     fit: "Campera Engomada",
     isNew: true,
     description:
-      "Campera engomada de cuero sintético en negro cuero. Cierre frontal, cuello redondo, ajuste entallado y look urbano sofisticado.",
+      "Campera biker de cuero sintético negro con cierre frontal asimétrico y cuello solapa con botones a presión. Costuras curvas, ajuste entallado y look urbano motero.",
   },
   {
     id: "m-campera",
