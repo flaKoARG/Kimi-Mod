@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Menu, ShoppingBag, Search } from "lucide-react";
+import { Menu, ShoppingBag, Search, ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { useCart } from "@/lib/cart";
@@ -33,56 +33,71 @@ export function Header({ active, onTab, onSearch }: HeaderProps) {
     setMobileOpen(false);
   };
 
+  // En mobile: si no estamos en inicio, mostramos botón "atrás" en lugar del menú hamburguesa
+  const showBackOnMobile = active !== "inicio";
+
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-brown-dark text-white">
-      <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
-        {/* Mobile menu */}
-        <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
-          <SheetTrigger asChild>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-white hover:bg-white/10 md:hidden"
-              aria-label="Abrir menú"
-            >
-              <Menu className="h-5 w-5" />
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="left" className="w-72 border-white/10 bg-brown-dark p-0 text-white">
-            <div className="px-6 pt-6">
-              <img
-                src="/images/logo/Rojo.png"
-                alt="Kimi Mod"
-                className="h-14 w-auto rounded-lg object-contain"
-              />
-            </div>
-            <SheetTitle className="sr-only">Menú Kimi Mod</SheetTitle>
-            <nav className="mt-4 flex flex-col">
-              {NAV.map((n) => (
-                <button
-                  key={n.id}
-                  onClick={() => go(n.id)}
-                  className={cn(
-                    "flex items-center justify-between border-l-2 px-6 py-3 text-left text-base font-medium transition-colors",
-                    active === n.id
-                      ? "border-primary bg-white/5 text-white"
-                      : "border-transparent text-zinc-300 hover:bg-white/5 hover:text-white",
-                    n.sale && "text-sale"
-                  )}
-                >
-                  {n.label}
-                  {n.sale && (
-                    <span className="rounded bg-sale px-1.5 py-0.5 text-[10px] font-bold uppercase">
-                      Ofertas
-                    </span>
-                  )}
-                </button>
-              ))}
-            </nav>
-          </SheetContent>
-        </Sheet>
+      <div className="mx-auto flex h-16 max-w-7xl items-center gap-2 px-3 sm:px-6 lg:px-8">
+        {/* Mobile: botón atrás o menú hamburguesa */}
+        {showBackOnMobile ? (
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => go("inicio")}
+            className="text-white hover:bg-white/10 md:hidden"
+            aria-label="Volver al inicio"
+          >
+            <ArrowLeft className="h-5 w-5" />
+          </Button>
+        ) : (
+          <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
+            <SheetTrigger asChild>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="text-white hover:bg-white/10 md:hidden"
+                aria-label="Abrir menú"
+              >
+                <Menu className="h-5 w-5" />
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="left" className="w-72 border-white/10 bg-brown-dark p-0 text-white">
+              <div className="px-6 pt-6">
+                <img
+                  src="/images/logo/Rojo.png"
+                  alt="Kimi Mod"
+                  className="h-14 w-auto rounded-lg object-contain"
+                />
+              </div>
+              <SheetTitle className="sr-only">Menú Kimi Mod</SheetTitle>
+              <nav className="mt-4 flex flex-col">
+                {NAV.map((n) => (
+                  <button
+                    key={n.id}
+                    onClick={() => go(n.id)}
+                    className={cn(
+                      "flex items-center justify-between border-l-2 px-6 py-3 text-left text-base font-medium transition-colors",
+                      active === n.id
+                        ? "border-primary bg-white/5 text-white"
+                        : "border-transparent text-zinc-300 hover:bg-white/5 hover:text-white",
+                      n.sale && "text-sale"
+                    )}
+                  >
+                    {n.label}
+                    {n.sale && (
+                      <span className="rounded bg-sale px-1.5 py-0.5 text-[10px] font-bold uppercase">
+                        Ofertas
+                      </span>
+                    )}
+                  </button>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
+        )}
 
-        {/* Logo */}
+        {/* Logo (en mobile se achica si hay botón atrás para dejar espacio al carrito) */}
         <button
           onClick={() => go("inicio")}
           className="flex select-none items-center"
@@ -91,7 +106,10 @@ export function Header({ active, onTab, onSearch }: HeaderProps) {
           <img
             src="/images/logo/Rojo.png"
             alt="Kimi Mod"
-            className="h-11 w-auto rounded-lg object-contain sm:h-12"
+            className={cn(
+              "h-11 w-auto rounded-lg object-contain sm:h-12",
+              showBackOnMobile ? "h-9 sm:h-12" : "h-11"
+            )}
           />
         </button>
 
@@ -114,6 +132,7 @@ export function Header({ active, onTab, onSearch }: HeaderProps) {
           ))}
         </nav>
 
+        {/* Acciones: buscar + carrito SIEMPRE visibles */}
         <div className="ml-auto flex items-center gap-1">
           <Button
             variant="ghost"

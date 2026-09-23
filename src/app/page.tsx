@@ -41,6 +41,39 @@ export default function Home() {
     if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
   };
 
+  // Manejar el botón "atrás" del navegador/celular:
+  // Si no estamos en inicio, volver a inicio; si estamos en inicio, dejar que salga.
+  useEffect(() => {
+    const onPopState = (e: PopStateEvent) => {
+      // Si hay un quick view o carrito abierto, cerrarlo primero
+      if (quickView) {
+        setQuickView(null);
+        return;
+      }
+      if (searchOpen) {
+        setSearchOpen(false);
+        return;
+      }
+      // Si no estamos en inicio, volver a inicio (sin salir de la página)
+      if (tab !== "inicio") {
+        e.preventDefault();
+        goTab("inicio");
+        // Restaurar la entrada de historial para no acumular
+        window.history.pushState({ tab: "inicio" }, "");
+      }
+    };
+    window.addEventListener("popstate", onPopState);
+    return () => window.removeEventListener("popstate", onPopState);
+  }, [tab, quickView, searchOpen]);
+
+  // Agregar entrada al historial cuando cambiamos de pestaña (excepto a inicio)
+  // Así el botón atrás del celular puede "volver" en vez de salir
+  useEffect(() => {
+    if (tab !== "inicio" && typeof window !== "undefined") {
+      window.history.pushState({ tab }, "");
+    }
+  }, [tab]);
+
   // Scroll to top on tab change (covers cases where goTab isn't used)
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "smooth" });
