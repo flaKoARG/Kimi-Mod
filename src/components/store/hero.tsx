@@ -10,7 +10,7 @@ interface HeroProps {
 
 export function Hero({ onTab }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-zinc-950 text-white">
+    <section className="relative overflow-hidden bg-brown-dark text-white">
       {/* Glow decorativo de fondo */}
       <div className="absolute inset-0">
         <div className="absolute left-1/2 top-1/2 h-[420px] w-[680px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/15 blur-[130px]" />

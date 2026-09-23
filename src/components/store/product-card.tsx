@@ -89,7 +89,7 @@ export function ProductCard({ product, onQuickView }: ProductCardProps) {
 
         <Button
           size="sm"
-          className="mt-2 w-full gap-1.5 bg-zinc-950 text-white hover:bg-zinc-800"
+          className="mt-2 w-full gap-1.5 bg-brown-dark text-white hover:bg-brown-dark/90"
           onClick={() =>
             add(product, product.sizes[0], color)
           }

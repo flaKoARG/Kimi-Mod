@@ -76,7 +76,7 @@ function Chip({
       className={cn(
         "rounded-full border px-4 py-1.5 text-sm font-medium transition-colors",
         active
-          ? "border-zinc-950 bg-zinc-950 text-white"
+          ? "border-brown-dark bg-brown-dark text-white"
           : "border-border bg-background text-foreground hover:border-zinc-400"
       )}
     >

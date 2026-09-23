@@ -126,7 +126,7 @@ export function CartDrawer() {
               <p className="mt-1 text-xs text-muted-foreground">
                 Envíos a todo el país · 3 cuotas sin interés
               </p>
-              <Button className="mt-3 w-full bg-zinc-950 text-white hover:bg-zinc-800">
+              <Button className="mt-3 w-full bg-brown-dark text-white hover:bg-brown-dark/90">
                 Finalizar compra
               </Button>
               <Button

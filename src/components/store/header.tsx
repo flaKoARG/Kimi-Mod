@@ -34,7 +34,7 @@ export function Header({ active, onTab, onSearch }: HeaderProps) {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-zinc-950 text-white">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-brown-dark text-white">
       <div className="mx-auto flex h-16 max-w-7xl items-center gap-3 px-4 sm:px-6 lg:px-8">
         {/* Mobile menu */}
         <Sheet open={mobileOpen} onOpenChange={setMobileOpen}>
@@ -48,7 +48,7 @@ export function Header({ active, onTab, onSearch }: HeaderProps) {
               <Menu className="h-5 w-5" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="left" className="w-72 border-white/10 bg-zinc-950 p-0 text-white">
+          <SheetContent side="left" className="w-72 border-white/10 bg-brown-dark p-0 text-white">
             <div className="px-6 pt-6">
               <img
                 src="/images/logo/Rojo.png"

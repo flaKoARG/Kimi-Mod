@@ -45,7 +45,7 @@ export function ImageLightbox({
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center bg-zinc-950/95 backdrop-blur-sm"
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-brown-dark/95 backdrop-blur-sm"
       onClick={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}
@@ -101,7 +101,7 @@ export function ImageLightbox({
 
       {/* Miniaturas abajo */}
       {images.length > 1 && (
-        <div className="absolute bottom-4 left-1/2 z-10 flex max-w-[90vw] -translate-x-1/2 gap-2 overflow-x-auto rounded-2xl bg-zinc-950/60 p-2 backdrop-blur scrollbar-thin">
+        <div className="absolute bottom-4 left-1/2 z-10 flex max-w-[90vw] -translate-x-1/2 gap-2 overflow-x-auto rounded-2xl bg-brown-dark/60 p-2 backdrop-blur scrollbar-thin">
           {images.map((img, i) => (
             <button
               key={img + i}

@@ -22,7 +22,7 @@ export function CategoryGrid({ onSelect }: CategoryGridProps) {
             loading="lazy"
             className="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950/85 via-zinc-950/25 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-brown-dark/85 via-brown-dark/25 to-transparent" />
           <div className="relative mt-auto p-4 text-white">
             <h3 className="text-lg font-bold leading-tight">{c.name}</h3>
             <p className="mt-0.5 line-clamp-2 text-xs text-zinc-200">{c.description}</p>

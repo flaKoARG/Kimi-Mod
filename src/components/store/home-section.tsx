@@ -58,7 +58,7 @@ export function HomeSection({ onTab, onCategory, onQuickView }: HomeSectionProps
         <section className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <button
             onClick={() => onTab("sale")}
-            className="group relative flex w-full flex-col items-start gap-3 overflow-hidden rounded-2xl bg-zinc-950 p-6 text-left text-white sm:flex-row sm:items-center sm:justify-between sm:p-8"
+            className="group relative flex w-full flex-col items-start gap-3 overflow-hidden rounded-2xl bg-brown-dark p-6 text-left text-white sm:flex-row sm:items-center sm:justify-between sm:p-8"
           >
             <div>
               <span className="inline-flex items-center gap-1.5 rounded-full bg-sale px-2.5 py-1 text-[11px] font-bold uppercase tracking-wide text-sale-foreground">
@@ -71,7 +71,7 @@ export function HomeSection({ onTab, onCategory, onQuickView }: HomeSectionProps
                 Remeras, camperas, jeans y polleras con descuento. Stock limitado.
               </p>
             </div>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-sm font-bold text-zinc-950 transition-transform group-hover:translate-x-1">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-white px-4 py-2 text-sm font-bold text-brown-dark transition-transform group-hover:translate-x-1">
               Comprar ofertas <ArrowRight className="h-4 w-4" />
             </span>
           </button>

@@ -9,7 +9,7 @@ interface FooterProps {
 
 export function Footer({ onTab }: FooterProps) {
   return (
-    <footer className="mt-auto border-t border-white/10 bg-zinc-950 text-zinc-300">
+    <footer className="mt-auto border-t border-white/10 bg-brown-dark text-zinc-300">
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
         {/* Brand */}
         <div className="col-span-2 lg:col-span-1">

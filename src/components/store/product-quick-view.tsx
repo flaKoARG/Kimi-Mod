@@ -84,7 +84,7 @@ function QuickViewBody({
             type="button"
             onClick={() => setLightboxOpen(true)}
             aria-label="Ver imagen ampliada"
-            className="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 rounded-full bg-zinc-950/70 px-3 py-1.5 text-xs font-medium text-white opacity-90 backdrop-blur transition-opacity hover:opacity-100"
+            className="absolute bottom-3 right-3 z-10 flex items-center gap-1.5 rounded-full bg-brown-dark/70 px-3 py-1.5 text-xs font-medium text-white opacity-90 backdrop-blur transition-opacity hover:opacity-100"
           >
             <ZoomIn className="h-4 w-4" /> Ampliar
           </button>
@@ -125,7 +125,7 @@ function QuickViewBody({
 
           {/* Contador de imágenes */}
           {images.length > 1 && (
-            <span className="pointer-events-none absolute bottom-3 left-3 z-10 rounded-full bg-zinc-950/70 px-2.5 py-1 text-xs font-medium text-white backdrop-blur">
+            <span className="pointer-events-none absolute bottom-3 left-3 z-10 rounded-full bg-brown-dark/70 px-2.5 py-1 text-xs font-medium text-white backdrop-blur">
               {active + 1} / {images.length}
             </span>
           )}
@@ -232,7 +232,7 @@ function QuickViewBody({
                 className={cn(
                   "min-w-11 rounded-lg border-2 px-4 py-2 text-sm font-semibold transition-colors",
                   size === s
-                    ? "border-zinc-950 bg-zinc-950 text-white"
+                    ? "border-brown-dark bg-brown-dark text-white"
                     : "border-border bg-background text-foreground hover:border-zinc-400"
                 )}
               >
@@ -267,7 +267,7 @@ function QuickViewBody({
           </div>
           <Button
             size="lg"
-            className="flex-1 gap-2 bg-zinc-950 text-base text-white hover:bg-zinc-800"
+            className="flex-1 gap-2 bg-brown-dark text-base text-white hover:bg-brown-dark/90"
             onClick={() => {
               add(product, size, color, qty);
               onOpenChange(false);
