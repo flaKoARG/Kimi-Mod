@@ -63,9 +63,9 @@ function QuickViewBody({
   const next = () => setActive((i) => (i + 1) % images.length);
 
   return (
-    <div className="grid h-auto grid-cols-1 overflow-y-auto md:h-[85vh] md:grid-cols-2 md:overflow-hidden">
+    <div className="grid max-h-[calc(100dvh-2rem)] grid-cols-1 overflow-y-auto md:grid-cols-2 md:overflow-hidden scrollbar-thin">
       {/* === Galería de imágenes === */}
-      <div className="flex flex-col gap-3 bg-muted p-4 md:h-full md:overflow-y-auto md:p-5 scrollbar-thin">
+      <div className="flex flex-none flex-col gap-3 bg-muted p-4 md:h-full md:overflow-y-auto md:p-5 scrollbar-thin">
         <div className="group relative aspect-square w-full overflow-hidden rounded-xl bg-background md:aspect-[4/5]">
           <button
             type="button"
@@ -158,7 +158,7 @@ function QuickViewBody({
       </div>
 
       {/* === Detalle del producto === */}
-      <div className="flex h-auto flex-col gap-4 overflow-visible p-6 scrollbar-thin md:h-full md:overflow-y-auto md:p-7">
+      <div className="flex flex-col gap-4 p-5 scrollbar-thin md:h-full md:overflow-y-auto md:p-7">
         <div>
           <p className="text-xs font-semibold uppercase tracking-wider text-primary">
             {product.brand ? `${product.brand} · ` : ""}

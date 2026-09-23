@@ -128,15 +128,17 @@ export function Hero({ onTab }: HeroProps) {
             key={s.image}
             className={cn(
               "absolute inset-0 transition-opacity duration-1000 ease-out",
-              i === active ? "opacity-100" : "opacity-0"
+              i === active ? "opacity-100" : "opacity-0",
+              isBanner && i === 0 && "flex items-center justify-center p-4 sm:p-8"
             )}
           >
             <img
               src={s.image}
               alt={s.alt}
               className={cn(
-                "h-full w-full",
-                isBanner && i === 0 ? "object-contain" : "object-cover object-center"
+                isBanner && i === 0
+                  ? "h-auto max-h-[60vh] w-full max-w-4xl object-contain sm:max-h-[65vh]"
+                  : "h-full w-full object-cover object-center"
               )}
             />
             {/* Overlay para legibilidad del texto */}
