@@ -170,14 +170,17 @@ export function Hero({ onTab }: HeroProps) {
           <span className="text-primary">{slide.highlight}</span>
         </h1>
 
-        <p
-          key={`desc-${active}`}
-          className="animate-in fade-in slide-in-from-bottom-2 duration-700 mt-4 max-w-md text-sm text-zinc-100 sm:text-base"
-        >
-          {slide.description}
-        </p>
+        {/* La descripción solo se muestra en el slide del banner (no en las prendas) */}
+        {isBanner && (
+          <p
+            key={`desc-${active}`}
+            className="animate-in fade-in slide-in-from-bottom-2 duration-700 mt-4 max-w-md text-sm text-zinc-100 sm:text-base"
+          >
+            {slide.description}
+          </p>
+        )}
 
-        <div className="mt-6 flex flex-wrap justify-center gap-3">
+        <div className={cn("flex flex-wrap justify-center gap-3", isBanner ? "mt-6" : "mt-8")}>
           {slide.cta.map((c) => (
             <Button
               key={c.label}
