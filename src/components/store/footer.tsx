@@ -1,11 +1,16 @@
 "use client";
 
-import { Instagram, Facebook, Mail, Phone, MapPin } from "lucide-react";
+import { Instagram, Facebook, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
 import type { TabId } from "./header";
 
 interface FooterProps {
   onTab: (t: TabId) => void;
 }
+
+// Número de contacto (San Juan, Argentina)
+const PHONE_DISPLAY = "264 503-4198";
+const PHONE_INTL = "542645034198"; // +54 9 264 503-4198 (formato WhatsApp)
+const WHATSAPP_URL = `https://wa.me/${PHONE_INTL}?text=${encodeURIComponent("Hola Kimi Mod! Quiero hacer una consulta sobre una prenda.")}`;
 
 export function Footer({ onTab }: FooterProps) {
   return (
@@ -29,6 +34,15 @@ export function Footer({ onTab }: FooterProps) {
               aria-label="Instagram"
             >
               <Instagram className="h-4 w-4" />
+            </a>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex h-9 w-9 items-center justify-center rounded-full border border-white/15 transition-colors hover:border-green-500 hover:text-green-500"
+              aria-label="WhatsApp"
+            >
+              <MessageCircle className="h-4 w-4" />
             </a>
             <a
               href="#"
@@ -86,7 +100,21 @@ export function Footer({ onTab }: FooterProps) {
               <Mail className="h-4 w-4 text-primary" /> hola@kimimod.com
             </li>
             <li className="flex items-center gap-2">
-              <Phone className="h-4 w-4 text-primary" /> +54 11 5555-0123
+              <Phone className="h-4 w-4 text-primary" />
+              <a href={`tel:+${PHONE_INTL}`} className="hover:text-white transition-colors">
+                {PHONE_DISPLAY}
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <MessageCircle className="h-4 w-4 text-green-500" />
+              <a
+                href={WHATSAPP_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-green-500 transition-colors"
+              >
+                WhatsApp
+              </a>
             </li>
             <li className="flex items-center gap-2">
               <MapPin className="h-4 w-4 text-primary" /> Santa Lucía, San Juan
