@@ -1,6 +1,6 @@
 "use client";
 
-import { Instagram, Facebook, Mail, Phone, MapPin, MessageCircle } from "lucide-react";
+import { Instagram, Facebook, Phone, MapPin, MessageCircle } from "lucide-react";
 import type { TabId } from "./header";
 
 interface FooterProps {
@@ -15,7 +15,7 @@ const WHATSAPP_URL = `https://wa.me/${PHONE_INTL}?text=${encodeURIComponent("Hol
 export function Footer({ onTab }: FooterProps) {
   return (
     <footer className="mt-auto border-t border-white/10 bg-brown-dark text-zinc-300">
-      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 py-12 sm:px-6 lg:grid-cols-4 lg:px-8">
+      <div className="mx-auto grid max-w-7xl grid-cols-2 gap-8 px-4 py-12 sm:px-6 lg:grid-cols-3 lg:px-8">
         {/* Brand */}
         <div className="col-span-2 lg:col-span-1">
           <img
@@ -76,24 +76,10 @@ export function Footer({ onTab }: FooterProps) {
           </ul>
         </div>
 
-        {/* Ayuda */}
-        <div>
-          <h3 className="text-sm font-semibold text-white">Ayuda</h3>
-          <ul className="mt-3 space-y-2 text-sm text-zinc-400">
-            <li><a href="#" className="hover:text-white">Guía de talles</a></li>
-            <li><a href="#" className="hover:text-white">Envíos y entregas</a></li>
-            <li><a href="#" className="hover:text-white">Cambios y devoluciones</a></li>
-            <li><a href="#" className="hover:text-white">Preguntas frecuentes</a></li>
-          </ul>
-        </div>
-
         {/* Contacto */}
         <div className="col-span-2 lg:col-span-1">
           <h3 className="text-sm font-semibold text-white">Contacto</h3>
           <ul className="mt-3 space-y-2 text-sm text-zinc-400">
-            <li className="flex items-center gap-2">
-              <Mail className="h-4 w-4 text-primary" /> hola@kimimod.com
-            </li>
             <li className="flex items-center gap-2">
               <Phone className="h-4 w-4 text-primary" />
               <a href={`tel:+${PHONE_INTL}`} className="hover:text-white transition-colors">
