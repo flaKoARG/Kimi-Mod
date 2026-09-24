@@ -32,7 +32,6 @@ const SLIDES: Slide[] = [
     cta: [
       { label: "Ver Mujer", tab: "mujer", primary: true },
       { label: "Ver Hombre", tab: "hombre" },
-      { label: "Ir al Sale", tab: "sale" },
     ],
   },
   {

@@ -16,7 +16,6 @@ import { SearchDialog } from "@/components/store/search-dialog";
 import { WhatsAppFloat } from "@/components/store/whatsapp-float";
 import {
   getProductsByGender,
-  getSaleProducts,
   getProductsByCategory,
   CATEGORY_LABEL,
   type CategoryId,
@@ -110,15 +109,6 @@ export default function Home() {
             title="Mujer"
             subtitle="Remeras, pantalones, camperas y polleras"
             products={getProductsByGender("mujer")}
-            onQuickView={setQuickView}
-          />
-        )}
-
-        {tab === "sale" && (
-          <CatalogView
-            title="Sale"
-            subtitle="Aprovechá las mejores ofertas antes de que se agoten"
-            products={getSaleProducts()}
             onQuickView={setQuickView}
           />
         )}

@@ -73,11 +73,6 @@ export function Footer({ onTab }: FooterProps) {
                 Categorías
               </button>
             </li>
-            <li>
-              <button onClick={() => onTab("sale")} className="text-sale hover:text-sale">
-                Sale
-              </button>
-            </li>
           </ul>
         </div>
 

@@ -7,14 +7,13 @@ import { Sheet, SheetContent, SheetTitle, SheetTrigger } from "@/components/ui/s
 import { useCart } from "@/lib/cart";
 import { cn } from "@/lib/utils";
 
-export type TabId = "inicio" | "hombre" | "mujer" | "categorias" | "sale";
+export type TabId = "inicio" | "hombre" | "mujer" | "categorias";
 
-const NAV: { id: TabId; label: string; sale?: boolean }[] = [
+const NAV: { id: TabId; label: string }[] = [
   { id: "inicio", label: "Inicio" },
   { id: "hombre", label: "Hombre" },
   { id: "mujer", label: "Mujer" },
   { id: "categorias", label: "Categorías" },
-  { id: "sale", label: "Sale", sale: true },
 ];
 
 interface HeaderProps {
@@ -80,16 +79,10 @@ export function Header({ active, onTab, onSearch }: HeaderProps) {
                       "flex items-center justify-between border-l-2 px-6 py-3 text-left text-base font-medium transition-colors",
                       active === n.id
                         ? "border-primary bg-white/5 text-white"
-                        : "border-transparent text-zinc-300 hover:bg-white/5 hover:text-white",
-                      n.sale && "text-sale"
+                        : "border-transparent text-zinc-300 hover:bg-white/5 hover:text-white"
                     )}
                   >
                     {n.label}
-                    {n.sale && (
-                      <span className="rounded bg-sale px-1.5 py-0.5 text-[10px] font-bold uppercase">
-                        Ofertas
-                      </span>
-                    )}
                   </button>
                 ))}
               </nav>
@@ -123,8 +116,7 @@ export function Header({ active, onTab, onSearch }: HeaderProps) {
                 "rounded-md px-3 py-2 text-sm font-medium transition-colors",
                 active === n.id
                   ? "bg-white/10 text-white"
-                  : "text-zinc-300 hover:bg-white/5 hover:text-white",
-                n.sale && active !== n.id && "text-sale hover:text-sale"
+                  : "text-zinc-300 hover:bg-white/5 hover:text-white"
               )}
             >
               {n.label}
