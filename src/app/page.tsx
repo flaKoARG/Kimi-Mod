@@ -13,6 +13,7 @@ import { Footer } from "@/components/store/footer";
 import { CartDrawer } from "@/components/store/cart-drawer";
 import { ProductQuickView } from "@/components/store/product-quick-view";
 import { SearchDialog } from "@/components/store/search-dialog";
+import { WhatsAppFloat } from "@/components/store/whatsapp-float";
 import {
   getProductsByGender,
   getSaleProducts,
@@ -178,6 +179,7 @@ export default function Home() {
         onOpenChange={setSearchOpen}
         onSelect={setQuickView}
       />
+      <WhatsAppFloat />
     </div>
   );
 }
