@@ -94,7 +94,7 @@ export const PRODUCTS: Product[] = [
     name: "Blue Legacy",
     gender: "hombre",
     category: "remeras",
-    price: 25000,
+    price: 16000,
     image: "/images/products/remera-hombre-1-1.jpeg",
     gallery: [
       "/images/products/remera-hombre-1-2.jpeg",
@@ -115,7 +115,7 @@ export const PRODUCTS: Product[] = [
     name: "Worn Fate",
     gender: "hombre",
     category: "remeras",
-    price: 15000,
+    price: 16000,
     image: "/images/products/remera-hombre-2-1.jpeg",
     gallery: [
       "/images/products/remera-hombre-2-2.jpeg",
@@ -136,7 +136,7 @@ export const PRODUCTS: Product[] = [
     name: "Off Duty",
     gender: "hombre",
     category: "remeras",
-    price: 15000,
+    price: 16000,
     image: "/images/products/remera-hombre-3-1.jpeg",
     gallery: [
       "/images/products/remera-hombre-3-2.jpeg",
@@ -257,7 +257,7 @@ export const PRODUCTS: Product[] = [
     name: "Concrete Wings",
     gender: "hombre",
     category: "camperas",
-    price: 20000,
+    price: 23000,
     image: "/images/products/h-buzo.jpg",
     gallery: [
       "/images/products/h-buzo-2.jpg",
@@ -364,7 +364,7 @@ export const PRODUCTS: Product[] = [
     name: "Noir",
     gender: "mujer",
     category: "camperas",
-    price: 25000,
+    price: 35000,
     image: "/images/products/noir.jpeg",
     gallery: [
       "/images/products/noir-2.jpeg",
