@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { CategoryGrid } from "./category-grid";
 import { ProductCard } from "./product-card";
+import { HowToBuy } from "./how-to-buy";
 import type { TabId } from "./header";
 import {
   getNewProducts,
@@ -73,6 +74,9 @@ export function HomeSection({ onTab, onCategory, onQuickView }: HomeSectionProps
           <CategoryGrid onSelect={onCategory} />
         </div>
       </section>
+
+      {/* Cómo comprar */}
+      <HowToBuy />
     </div>
   );
 }
