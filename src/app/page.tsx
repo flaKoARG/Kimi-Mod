@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Header, type TabId } from "@/components/store/header";
@@ -14,6 +14,7 @@ import { CartDrawer } from "@/components/store/cart-drawer";
 import { ProductQuickView } from "@/components/store/product-quick-view";
 import { SearchDialog } from "@/components/store/search-dialog";
 import { WhatsAppFloat } from "@/components/store/whatsapp-float";
+import { AdminPanel } from "@/components/store/admin-panel";
 import {
   getProductsByGender,
   getProductsByCategory,
@@ -21,12 +22,63 @@ import {
   type CategoryId,
   type Product,
 } from "@/lib/products";
+import { trackVisit, trackProductView } from "@/lib/auth";
 
 export default function Home() {
   const [tab, setTab] = useState<TabId>("inicio");
   const [selectedCategory, setSelectedCategory] = useState<CategoryId | null>(null);
   const [quickView, setQuickView] = useState<Product | null>(null);
   const [searchOpen, setSearchOpen] = useState(false);
+  const [adminOpen, setAdminOpen] = useState(false);
+
+  // === Tracking de visitas ===
+  // Registrar visita cuando cambia la sección (1 vez por sección por sesión)
+  const trackedSections = useRef<Set<string>>(new Set());
+  useEffect(() => {
+    if (trackedSections.current.has(tab)) return;
+    trackedSections.current.add(tab);
+    trackVisit(tab);
+  }, [tab]);
+
+  // Tracking de vista de producto cuando se abre el Quick View
+  const trackedProducts = useRef<Set<string>>(new Set());
+  useEffect(() => {
+    if (!quickView) return;
+    if (trackedProducts.current.has(quickView.id)) return;
+    trackedProducts.current.add(quickView.id);
+    trackProductView(quickView.id, quickView.name);
+  }, [quickView]);
+
+  // === Trigger secreto del panel de admin ===
+  // 5 clics rápidos en el logo (menos de 2s entre cada clic) o Ctrl+Shift+A
+  const logoClicks = useRef<{ count: number; timer: ReturnType<typeof setTimeout> | null }>({
+    count: 0,
+    timer: null,
+  });
+
+  const handleLogoClick = () => {
+    const ref = logoClicks.current;
+    ref.count += 1;
+    if (ref.timer) clearTimeout(ref.timer);
+    ref.timer = setTimeout(() => {
+      ref.count = 0;
+    }, 2000);
+    if (ref.count >= 5) {
+      ref.count = 0;
+      setAdminOpen(true);
+    }
+  };
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.shiftKey && (e.key === "A" || e.key === "a")) {
+        e.preventDefault();
+        setAdminOpen(true);
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
 
   // Reset category drill-down when leaving "categorias"
   const goTab = (t: TabId) => {
@@ -81,7 +133,7 @@ export default function Home() {
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
-      <Header active={tab} onTab={goTab} onSearch={() => setSearchOpen(true)} />
+      <Header active={tab} onTab={goTab} onSearch={() => setSearchOpen(true)} onLogoClick={handleLogoClick} />
 
       <main className="flex-1">
         {tab === "inicio" && (
@@ -170,6 +222,7 @@ export default function Home() {
         onSelect={setQuickView}
       />
       <WhatsAppFloat />
+      <AdminPanel open={adminOpen} onClose={() => setAdminOpen(false)} />
     </div>
   );
 }

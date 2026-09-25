@@ -13,20 +13,30 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
+// Visitas a la página (para el panel de admin)
+model Visit {
   id        String   @id @default(cuid())
-  email     String   @unique
-  name      String?
+  // Sección vista: inicio, hombre, mujer, categorias
+  section   String   @default("inicio")
+  // Identificador anónimo del navegador (para no duplicar)
+  visitorId String
+  // User agent resumido (navegador + SO)
+  device    String?
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+
+  @@index([section])
+  @@index([createdAt])
+  @@index([visitorId])
 }
 
-model Post {
+// Productos vistos en Quick View
+model ProductView {
   id        String   @id @default(cuid())
-  title     String
-  content   String?
-  published Boolean  @default(false)
-  authorId  String
+  productId String
+  productName String
+  visitorId String
   createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
+
+  @@index([productId])
+  @@index([createdAt])
 }

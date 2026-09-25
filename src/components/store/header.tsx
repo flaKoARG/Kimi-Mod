@@ -20,9 +20,10 @@ interface HeaderProps {
   active: TabId;
   onTab: (t: TabId) => void;
   onSearch: () => void;
+  onLogoClick?: () => void;
 }
 
-export function Header({ active, onTab, onSearch }: HeaderProps) {
+export function Header({ active, onTab, onSearch, onLogoClick }: HeaderProps) {
   const [mobileOpen, setMobileOpen] = useState(false);
   const count = useCart((s) => s.count());
   const openCart = useCart((s) => s.setOpen);
@@ -30,6 +31,11 @@ export function Header({ active, onTab, onSearch }: HeaderProps) {
   const go = (t: TabId) => {
     onTab(t);
     setMobileOpen(false);
+  };
+
+  const handleLogoClick = () => {
+    onLogoClick?.();
+    go("inicio");
   };
 
   // En mobile: si no estamos en inicio, mostramos botón "atrás" en lugar del menú hamburguesa
@@ -92,7 +98,7 @@ export function Header({ active, onTab, onSearch }: HeaderProps) {
 
         {/* Logo (en mobile se achica si hay botón atrás para dejar espacio al carrito) */}
         <button
-          onClick={() => go("inicio")}
+          onClick={handleLogoClick}
           className="flex select-none items-center"
           aria-label="Kimi Mod inicio"
         >
