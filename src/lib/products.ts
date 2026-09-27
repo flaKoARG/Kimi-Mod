@@ -94,7 +94,7 @@ export const PRODUCTS: Product[] = [
     name: "Blue Legacy",
     gender: "hombre",
     category: "remeras",
-    price: 16000,
+    price: 25000,
     image: "/images/products/remera-hombre-1-1.jpeg",
     gallery: [
       "/images/products/remera-hombre-1-2.jpeg",
@@ -386,7 +386,7 @@ export const PRODUCTS: Product[] = [
     name: "Mocha Muse",
     gender: "mujer",
     category: "tops",
-    price: 10000,
+    price: 13000,
     image: "/images/products/MochaMuse.jpeg",
     gallery: [
       "/images/products/MochaMuse-2.jpeg",
@@ -449,7 +449,7 @@ export const PRODUCTS: Product[] = [
     name: "Lemon Bloom",
     gender: "mujer",
     category: "tops",
-    price: 10000,
+    price: 13000,
     image: "/images/products/Lemon.jpeg",
     gallery: [
       "/images/products/Lemon-2.jpeg",
